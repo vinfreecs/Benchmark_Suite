@@ -4,6 +4,7 @@
 #include <memory>
 #include <omp.h>
 #include <string>
+#include <omp.h>
 #include "timing.h"
 #include "vec.hpp"
 #include "kernals.hpp"
@@ -25,7 +26,10 @@ int main(int argc, char *argv[])
   int warmupIter = 10;                                      // warmup iteration to avoid caching effects
   int N = isdigit(*argv[2]) ? std::stoi(argv[2]) : 1000;    // size of the aray
   int iter = isdigit(*argv[3]) ? std::stod(argv[3]) : 1000; // number of iterations
-  if (strcmp(argv[1], "axpby") == 0)
+
+  std::string input_kernal = argv[1];
+
+  if (input_kernal == "axpby")
   {
     PRINT_KERNAL("AXPBY");
     auto a1 = new vec(N);
@@ -38,7 +42,7 @@ int main(int argc, char *argv[])
     delete a2;
     delete a3;
   }
-  else if (strcmp(argv[1], "dot") == 0)
+  else if (input_kernal == "dot")
   {
     PRINT_KERNAL("DOT")
     auto a1 = new vec(N);

@@ -1,12 +1,12 @@
 # Compiler
-CXX = g++
+CXX = icpx
 # Flags
-CXXFLAGS = -std=c++17 -O3 
-CXXFLAGS += -fopenmp
+CXXFLAGS = -O3 -xHost
+CXXFLAGS += -qopenmp
 
 # Target and source files
 TARGET = benchmark
-SRC = main.cpp
+SRC = src/main.cpp src/timing.c
 
 # Build rule
 $(TARGET): $(SRC)
