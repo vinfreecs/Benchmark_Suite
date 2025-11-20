@@ -1,18 +1,19 @@
 #pragma once
 
-#define HARNESS(kernal)                \
-  for (int i = 0; i < warmupIter; i++) \
-  {                                    \
-    kernal;                            \
-  }                                    \
-  double start, end;                   \
-  start = getTimeStamp();              \
-  for (int i = 0; i < iter; i++)       \
-  {                                    \
-    kernal;                            \
-  }                                    \
-  end = getTimeStamp();                \
-  std::cout << "Time taken : " << end - start << std::endl;
+#define HARNESS(kernal)                                     \
+  for (int i = 0; i < warmupIter; i++)                      \
+  {                                                         \
+    kernal;                                                 \
+  }                                                         \
+  double start, end;                                        \
+  start = getTimeStamp();                                   \
+  for (int i = 0; i < iter; i++)                            \
+  {                                                         \
+    kernal;                                                 \
+  }                                                         \
+  end = getTimeStamp();                                     \
+  std::cout << "Time taken : " << end - start << std::endl; \
+  std::cout << "Performance : " << ((double)(iter * N)) / ((end - start) * 1e6) << "MIter/s" << std::endl;
 
 // This is a axpby function which takes in 1D arrays and return an 1D array after computation
 // C = Ax + By

@@ -1,6 +1,6 @@
 build/
 .DS_Store*
 #CMakeLists.txt
-*.sh
+#*.sh
 # .gitignore
 .vscode/
