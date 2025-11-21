@@ -1,26 +1,29 @@
-
+#!/bin/bash -l
 module load intel likwid
 
-cd build && cmake ..
+FILENAME = "axpby_benchmark.csv"
+
+
+mkdir ../build && cd ../build && cmake ..
 
 make
 
 echo "AXPBY BENCHMARK"
-
 echo "Benchmarking across 1 Fritz Node"
-for t in {1..72}; 
+
+for t in {0..71}; 
 do
-    echo " no: of threads $t"
+    echo " no: of threads $((t+1))"
     srun --cpu-freq=2400000-2400000:performance \
-         --export=ALL,OMP_NUM_THREADS=$t,OMP_PLACES=cores,OMP_PROC_BIND=close \
-        ./benchmark axpby 10000
+     likwid-pin -c 0-$t -q ./benchmark axpby 10000 50000 
 done
 
+echo"---------------------------------------------------------------"
+
 echo "Benchmarking across 1 Numa Domain in a Fritz Node "
-for t in {1..18}; 
+for t in {0..17}; 
 do
-    echo " no: of threads $t"
+    echo " no: of threads $((t+1))"
     srun --cpu-freq=2400000-2400000:performance \
-         --export=ALL,OMP_NUM_THREADS=$t,OMP_PLACES=cores,OMP_PROC_BIND=close \
-        ./benchmark axpby 10000
+     likwid-pin -c 0-$t -q ./benchmark axpby 10000 50000 
 done
