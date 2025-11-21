@@ -8,6 +8,7 @@ public:
     {
         dim_ = dim;
         data_ = new double[dim_];
+        #pragma omp parallel for schedule(static)
         for (size_t i = 0; i < dim_; i++)
         {
             data_[i] = 0.1;

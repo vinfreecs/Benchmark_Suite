@@ -1,0 +1,360 @@
+ no: of threads 1
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.0104057
+Performance : 961.008MIt/s
+ no: of threads 2
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.00657639
+Performance : 1520.59MIt/s
+ no: of threads 3
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.00507623
+Performance : 1969.97MIt/s
+ no: of threads 4
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.00427769
+Performance : 2337.71MIt/s
+ no: of threads 5
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.00391058
+Performance : 2557.16MIt/s
+ no: of threads 6
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.00314866
+Performance : 3175.96MIt/s
+ no: of threads 7
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.00272171
+Performance : 3674.16MIt/s
+ no: of threads 8
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.00236684
+Performance : 4225.05MIt/s
+ no: of threads 9
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.00226638
+Performance : 4412.32MIt/s
+ no: of threads 10
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.00110393
+Performance : 9058.55MIt/s
+ no: of threads 11
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.00111682
+Performance : 8954.03MIt/s
+ no: of threads 12
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000947348
+Performance : 10555.8MIt/s
+ no: of threads 13
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.00100088
+Performance : 9991.22MIt/s
+ no: of threads 14
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000811161
+Performance : 12328MIt/s
+ no: of threads 15
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000744044
+Performance : 13440.1MIt/s
+ no: of threads 16
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000527923
+Performance : 18942.2MIt/s
+ no: of threads 17
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000447552
+Performance : 22343.8MIt/s
+ no: of threads 18
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000401051
+Performance : 24934.5MIt/s
+ no: of threads 19
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000347103
+Performance : 28809.9MIt/s
+ no: of threads 20
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000275171
+Performance : 36341.1MIt/s
+ no: of threads 21
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000309287
+Performance : 32332.5MIt/s
+ no: of threads 22
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000281592
+Performance : 35512.3MIt/s
+ no: of threads 23
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000259651
+Performance : 38513.2MIt/s
+ no: of threads 24
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000254454
+Performance : 39299.8MIt/s
+ no: of threads 25
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000205629
+Performance : 48631.3MIt/s
+ no: of threads 26
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000223671
+Performance : 44708.5MIt/s
+ no: of threads 27
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000229074
+Performance : 43654.1MIt/s
+ no: of threads 28
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000210461
+Performance : 47514.8MIt/s
+ no: of threads 29
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000214582
+Performance : 46602.2MIt/s
+ no: of threads 30
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.00020713
+Performance : 48278.9MIt/s
+ no: of threads 31
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000196923
+Performance : 50781.3MIt/s
+ no: of threads 32
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000174727
+Performance : 57232.2MIt/s
+ no: of threads 33
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000193964
+Performance : 51555.9MIt/s
+ no: of threads 34
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000188243
+Performance : 53122.8MIt/s
+ no: of threads 35
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000182968
+Performance : 54654.5MIt/s
+ no: of threads 36
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000169963
+Performance : 58836.3MIt/s
+ no: of threads 37
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000180386
+Performance : 55436.7MIt/s
+ no: of threads 38
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000194208
+Performance : 51491.1MIt/s
+ no: of threads 39
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000168945
+Performance : 59190.8MIt/s
+ no: of threads 40
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000155499
+Performance : 64309.2MIt/s
+ no: of threads 41
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000169174
+Performance : 59110.8MIt/s
+ no: of threads 42
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000175918
+Performance : 56844.7MIt/s
+ no: of threads 43
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000169073
+Performance : 59146MIt/s
+ no: of threads 44
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000148831
+Performance : 67190.3MIt/s
+ no: of threads 45
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000155431
+Performance : 64337.3MIt/s
+ no: of threads 46
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000160247
+Performance : 62403.6MIt/s
+ no: of threads 47
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000152805
+Performance : 65442.9MIt/s
+ no: of threads 48
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000143568
+Performance : 69653.4MIt/s
+ no: of threads 49
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000133624
+Performance : 74836.7MIt/s
+ no: of threads 50
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000120431
+Performance : 83035MIt/s
+ no: of threads 51
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.00013017
+Performance : 76822.6MIt/s
+ no: of threads 52
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.00013307
+Performance : 75148.6MIt/s
+ no: of threads 53
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000121353
+Performance : 82404.1MIt/s
+ no: of threads 54
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000124857
+Performance : 80091.7MIt/s
+ no: of threads 55
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000122845
+Performance : 81403.3MIt/s
+ no: of threads 56
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000125926
+Performance : 79411.7MIt/s
+ no: of threads 57
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000116368
+Performance : 85934.4MIt/s
+ no: of threads 58
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.00012311
+Performance : 81228.1MIt/s
+ no: of threads 59
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000120103
+Performance : 83261.9MIt/s
+ no: of threads 60
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000119183
+Performance : 83904.4MIt/s
+ no: of threads 61
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000117188
+Performance : 85333.1MIt/s
+ no: of threads 62
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000119811
+Performance : 83464.8MIt/s
+ no: of threads 63
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000112062
+Performance : 89236.4MIt/s
+ no: of threads 64
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000112019
+Performance : 89270.6MIt/s
+ no: of threads 65
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000124949
+Performance : 80032.6MIt/s
+ no: of threads 66
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000117327
+Performance : 85231.8MIt/s
+ no: of threads 67
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000127957
+Performance : 78151.1MIt/s
+ no: of threads 68
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000124425
+Performance : 80369.6MIt/s
+ no: of threads 69
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000126341
+Performance : 79150.9MIt/s
+ no: of threads 70
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.00010602
+Performance : 94321.5MIt/s
+ no: of threads 71
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000126441
+Performance : 79088.3MIt/s
+ no: of threads 72
+-- BENCHMARKING AXPBY --
+The number of iterations 10 the size of the array 1000000
+Time taken : 0.000110119
+Performance : 90811.1MIt/s
