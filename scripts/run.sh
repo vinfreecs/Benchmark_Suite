@@ -1,23 +1,18 @@
+#!/bin/bash
 
+KERNEL="$1"
+N="$2"
+ITER="$3"
 
-# for t in {18,32,54,72}
-# do
-# # Set OMP environment variables
-# export OMP_NUM_THREADS=$t
-# export OMP_PLACES=cores
-# export OMP_PROC_BIND=close
+if [ -z "$KERNEL" ] || [ -z "$N" ] || [ -z "$ITER" ]; then
+    echo "Usage: $0 <kernel> <N_elements> <repetitions>"
+    exit 1
+fi
 
-# # Run the benchmark, simplifying the --cpu-freq flag if the previous one failed
-# srun --cpu-freq=2400000-2400000:performance ./benchmark axpby 10000000 10
-# done
+for t in {18,32,54,72}; do
+    echo " no: of threads $t"
 
-#___________________compile befor running this shell___________________
-
-for t in {1..72}; 
-do
-    echo " no: of threads $((t))"
-    
     srun --cpu-freq=2400000-2400000:performance \
-    --export=ALL,OMP_NUM_THREADS=$t,OMP_PLACES=cores,OMP_PROC_BIND=close \
-    .././benchmark dot 100000000 50
+         --export=ALL,OMP_NUM_THREADS=$t,OMP_PLACES=cores,OMP_PROC_BIND=close \
+         .././benchmark "$KERNEL" "$N" "$ITER"
 done
