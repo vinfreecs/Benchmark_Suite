@@ -1,6 +1,6 @@
 set datafile separator ","
 
-set title "AXPBY Performance for N = 100,000,000"
+set title "DOT Performance for N = 100,000,000"
 set xlabel "Threads"
 set ylabel "Performance (GIt/s)"
 
