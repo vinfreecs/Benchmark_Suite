@@ -6,7 +6,7 @@
 # Usage:
 #   cat new_raw_benchmark_data.txt | ./parse_benchmark_data_v2.sh
 
-output_file="dot_results.csv"
+output_file="axpby_results_icpx.csv"
 
 # The core AWK command for parsing the data
 awk '

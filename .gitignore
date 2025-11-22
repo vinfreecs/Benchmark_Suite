@@ -4,3 +4,4 @@ build/
 #*.sh
 # .gitignore
 .vscode/
+results/*.txt

@@ -1,6 +1,7 @@
 #pragma once
 
 // 1D array class
+// TODO add helper functions and other constructors
 class vec
 {
 public:
@@ -13,6 +14,10 @@ public:
         {
             data_[i] = 0.1;
         }
+    }
+
+    ~vec(){
+        delete[] data_;
     }
 
     // returns the length of the array
