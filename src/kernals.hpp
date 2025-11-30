@@ -19,7 +19,12 @@
 
 // This is a axpby function which takes in 1D arrays and return an 1D array
 // after computation C = Ax + By
-void axpby(vec ans, vec x, vec y, double a, double b, int N) {
+void axpby(std::vector<uninitialized<double>> &ans,
+           const std::vector<uninitialized<double>> &x,
+           const std::vector<uninitialized<double>> &y, double a, double b,
+           int N) {
+
+// Ensure the loop is large enough to benefit from threads
 #pragma omp parallel for schedule(static)
   for (int i = 0; i < N; i++) {
     ans[i] = (a * x[i]) + (b * y[i]);
@@ -27,10 +32,15 @@ void axpby(vec ans, vec x, vec y, double a, double b, int N) {
 }
 // This is a dot function which takes in two 1D arrays and return the dot
 // product , ie, a double
-void dot(double &ans, vec x, vec y, int N) {
+void dot(double &ans, const std::vector<uninitialized<double>> &x,
+         const std::vector<uninitialized<double>> &y, int N) {
 
-#pragma omp parallel for schedule(static) reduction(+ : ans)
+  double temp_sum = 0.0;
+
+// Use OpenMP reduction to sum safely in parallel
+#pragma omp parallel for schedule(static) reduction(+ : temp_sum)
   for (int i = 0; i < N; i++) {
-    ans += x[i] * y[i];
+    temp_sum += x[i] * y[i];
   }
+  ans = temp_sum;
 }
