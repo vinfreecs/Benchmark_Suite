@@ -1,0 +1,110 @@
+likwid-bench -t copy -w N:2GB
+Warning: Sanitizing vector length to a multiple of the loop stride 4 and thread count 72 from 125000000 elements (1000000000 bytes) to 124999776 elements (999998208 bytes)
+Allocate: Process running on hwthread 0 (Domain N) - Vector length 124999776/999998208 Offset 0 Alignment 512
+Allocate: Process running on hwthread 0 (Domain N) - Vector length 124999776/999998208 Offset 0 Alignment 512
+Initialization: First thread in domain initializes the whole stream
+--------------------------------------------------------------------------------
+LIKWID MICRO BENCHMARK
+Test: copy
+--------------------------------------------------------------------------------
+Using 1 work groups
+Using 72 threads
+--------------------------------------------------------------------------------
+Running without Marker API. Activate Marker API with -m on commandline.
+--------------------------------------------------------------------------------
+Group: 0 Thread 7 Global Thread 7 running on hwthread 7 - Vector length 1736108 Offset 12152756
+Group: 0 Thread 9 Global Thread 9 running on hwthread 9 - Vector length 1736108 Offset 15624972
+Group: 0 Thread 18 Global Thread 18 running on hwthread 18 - Vector length 1736108 Offset 31249944
+Group: 0 Thread 22 Global Thread 22 running on hwthread 22 - Vector length 1736108 Offset 38194376
+Group: 0 Thread 8 Global Thread 8 running on hwthread 8 - Vector length 1736108 Offset 13888864
+Group: 0 Thread 11 Global Thread 11 running on hwthread 11 - Vector length 1736108 Offset 19097188
+Group: 0 Thread 12 Global Thread 12 running on hwthread 12 - Vector length 1736108 Offset 20833296
+Group: 0 Thread 10 Global Thread 10 running on hwthread 10 - Vector length 1736108 Offset 17361080
+Group: 0 Thread 36 Global Thread 36 running on hwthread 36 - Vector length 1736108 Offset 62499888
+Group: 0 Thread 5 Global Thread 5 running on hwthread 5 - Vector length 1736108 Offset 8680540
+Group: 0 Thread 38 Global Thread 38 running on hwthread 38 - Vector length 1736108 Offset 65972104
+Group: 0 Thread 40 Global Thread 40 running on hwthread 40 - Vector length 1736108 Offset 69444320
+Group: 0 Thread 32 Global Thread 32 running on hwthread 32 - Vector length 1736108 Offset 55555456
+Group: 0 Thread 43 Global Thread 43 running on hwthread 43 - Vector length 1736108 Offset 74652644
+Group: 0 Thread 16 Global Thread 16 running on hwthread 16 - Vector length 1736108 Offset 27777728
+Group: 0 Thread 20 Global Thread 20 running on hwthread 20 - Vector length 1736108 Offset 34722160
+Group: 0 Thread 49 Global Thread 49 running on hwthread 49 - Vector length 1736108 Offset 85069292
+Group: 0 Thread 51 Global Thread 51 running on hwthread 51 - Vector length 1736108 Offset 88541508
+Group: 0 Thread 55 Global Thread 55 running on hwthread 55 - Vector length 1736108 Offset 95485940
+Group: 0 Thread 19 Global Thread 19 running on hwthread 19 - Vector length 1736108 Offset 32986052
+Group: 0 Thread 61 Global Thread 61 running on hwthread 61 - Vector length 1736108 Offset 105902588
+Group: 0 Thread 26 Global Thread 26 running on hwthread 26 - Vector length 1736108 Offset 45138808
+Group: 0 Thread 28 Global Thread 28 running on hwthread 28 - Vector length 1736108 Offset 48611024
+Group: 0 Thread 0 Global Thread 0 running on hwthread 0 - Vector length 1736108 Offset 0
+Group: 0 Thread 29 Global Thread 29 running on hwthread 29 - Vector length 1736108 Offset 50347132
+Group: 0 Thread 68 Global Thread 68 running on hwthread 68 - Vector length 1736108 Offset 118055344
+Group: 0 Thread 30 Global Thread 30 running on hwthread 30 - Vector length 1736108 Offset 52083240
+Group: 0 Thread 6 Global Thread 6 running on hwthread 6 - Vector length 1736108 Offset 10416648
+Group: 0 Thread 1 Global Thread 1 running on hwthread 1 - Vector length 1736108 Offset 1736108
+Group: 0 Thread 33 Global Thread 33 running on hwthread 33 - Vector length 1736108 Offset 57291564
+Group: 0 Thread 35 Global Thread 35 running on hwthread 35 - Vector length 1736108 Offset 60763780
+Group: 0 Thread 13 Global Thread 13 running on hwthread 13 - Vector length 1736108 Offset 22569404
+Group: 0 Thread 37 Global Thread 37 running on hwthread 37 - Vector length 1736108 Offset 64235996
+Group: 0 Thread 39 Global Thread 39 running on hwthread 39 - Vector length 1736108 Offset 67708212
+Group: 0 Thread 42 Global Thread 42 running on hwthread 42 - Vector length 1736108 Offset 72916536
+Group: 0 Thread 41 Global Thread 41 running on hwthread 41 - Vector length 1736108 Offset 71180428
+Group: 0 Thread 45 Global Thread 45 running on hwthread 45 - Vector length 1736108 Offset 78124860
+Group: 0 Thread 44 Global Thread 44 running on hwthread 44 - Vector length 1736108 Offset 76388752
+Group: 0 Thread 15 Global Thread 15 running on hwthread 15 - Vector length 1736108 Offset 26041620
+Group: 0 Thread 14 Global Thread 14 running on hwthread 14 - Vector length 1736108 Offset 24305512
+Group: 0 Thread 17 Global Thread 17 running on hwthread 17 - Vector length 1736108 Offset 29513836
+Group: 0 Thread 56 Global Thread 56 running on hwthread 56 - Vector length 1736108 Offset 97222048
+Group: 0 Thread 47 Global Thread 47 running on hwthread 47 - Vector length 1736108 Offset 81597076
+Group: 0 Thread 48 Global Thread 48 running on hwthread 48 - Vector length 1736108 Offset 83333184
+Group: 0 Thread 50 Global Thread 50 running on hwthread 50 - Vector length 1736108 Offset 86805400
+Group: 0 Thread 46 Global Thread 46 running on hwthread 46 - Vector length 1736108 Offset 79860968
+Group: 0 Thread 53 Global Thread 53 running on hwthread 53 - Vector length 1736108 Offset 92013724
+Group: 0 Thread 54 Global Thread 54 running on hwthread 54 - Vector length 1736108 Offset 93749832
+Group: 0 Thread 52 Global Thread 52 running on hwthread 52 - Vector length 1736108 Offset 90277616
+Group: 0 Thread 57 Global Thread 57 running on hwthread 57 - Vector length 1736108 Offset 98958156
+Group: 0 Thread 58 Global Thread 58 running on hwthread 58 - Vector length 1736108 Offset 100694264
+Group: 0 Thread 21 Global Thread 21 running on hwthread 21 - Vector length 1736108 Offset 36458268
+Group: 0 Thread 59 Global Thread 59 running on hwthread 59 - Vector length 1736108 Offset 102430372
+Group: 0 Thread 60 Global Thread 60 running on hwthread 60 - Vector length 1736108 Offset 104166480
+Group: 0 Thread 23 Global Thread 23 running on hwthread 23 - Vector length 1736108 Offset 39930484
+Group: 0 Thread 25 Global Thread 25 running on hwthread 25 - Vector length 1736108 Offset 43402700
+Group: 0 Thread 24 Global Thread 24 running on hwthread 24 - Vector length 1736108 Offset 41666592
+Group: 0 Thread 63 Global Thread 63 running on hwthread 63 - Vector length 1736108 Offset 109374804
+Group: 0 Thread 64 Global Thread 64 running on hwthread 64 - Vector length 1736108 Offset 111110912
+Group: 0 Thread 65 Global Thread 65 running on hwthread 65 - Vector length 1736108 Offset 112847020
+Group: 0 Thread 66 Global Thread 66 running on hwthread 66 - Vector length 1736108 Offset 114583128
+Group: 0 Thread 69 Global Thread 69 running on hwthread 69 - Vector length 1736108 Offset 119791452
+Group: 0 Thread 67 Global Thread 67 running on hwthread 67 - Vector length 1736108 Offset 116319236
+Group: 0 Thread 71 Global Thread 71 running on hwthread 71 - Vector length 1736108 Offset 123263668
+Group: 0 Thread 70 Global Thread 70 running on hwthread 70 - Vector length 1736108 Offset 121527560
+Group: 0 Thread 62 Global Thread 62 running on hwthread 62 - Vector length 1736108 Offset 107638696
+Group: 0 Thread 2 Global Thread 2 running on hwthread 2 - Vector length 1736108 Offset 3472216
+Group: 0 Thread 4 Global Thread 4 running on hwthread 4 - Vector length 1736108 Offset 6944432
+Group: 0 Thread 3 Global Thread 3 running on hwthread 3 - Vector length 1736108 Offset 5208324
+Group: 0 Thread 27 Global Thread 27 running on hwthread 27 - Vector length 1736108 Offset 46874916
+Group: 0 Thread 31 Global Thread 31 running on hwthread 31 - Vector length 1736108 Offset 53819348
+Group: 0 Thread 34 Global Thread 34 running on hwthread 34 - Vector length 1736108 Offset 59027672
+--------------------------------------------------------------------------------
+Cycles:                 18504831368
+CPU Clock:              2394329211
+Cycle Clock:            2394329211
+Time:                   7.728608e+00 sec
+Iterations:             73728
+Iterations per thread:  1024
+Inner loop executions:  434027
+Size (Byte):            1999996416
+Size per thread:        27777728
+Number of Flops:        0
+MFlops/s:               0.00
+Data volume (Byte):     2047996329984
+MByte/s:                264989.04
+Cycles per update:      0.144569
+Cycles per cacheline:   1.156554
+Loads per update:       1
+Stores per update:      1
+Load bytes per element: 8
+Store bytes per elem.:  8
+Load/store ratio:       1.00
+Instructions:           351999369232
+UOPs:                   447999197184
+--------------------------------------------------------------------------------
