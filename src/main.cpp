@@ -5,6 +5,8 @@
 #include <omp.h>
 #include <string>
 #include <omp.h>
+#include <vector>
+#include "mmio.h"
 #include "timing.h"
 #include "vec.hpp"
 #include "kernals.hpp"
@@ -51,6 +53,31 @@ int main(int argc, char *argv[])
     HARNESS(dot(dot_result, a1, a2, N))
     delete a1;
     delete a2;
+  }
+  else if(input_kernal == "spmv"){
+    const std::string filename = "../matrices/nv1.mtx"; 
+    int rows,cols,nz;
+    double *values;
+    int *col_idx;
+    int *row_start;
+    if(mm_read_unsymmetric_sparse(filename,&rows,&cols,&nz,&values,&row_start,&col_idx) < 0) { 
+      std::cerr<<"There is a problem ! \n";
+    }
+    std::vector<double> mat(rows*cols,0);
+    for(int i =0;i<rows;i++){
+      int start = row_start[i];
+      int end = row_start[i+1];
+      for(int j=start; j<end ;j++){
+        mat[i*cols +col_idx[j]] = values[j];
+      }
+    }
+
+    for(int i=0 ;i<rows;i++){
+      for(int j=0;j<cols;j++){
+        std::cout<< i<<" ,"<<j<<" ,"<<mat[i*cols +col_idx[j]]<<"\n";
+      }
+    }
+    
   }
   else
   {
