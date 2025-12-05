@@ -1,0 +1,25 @@
+Bandwidth of memory
+likwid-bench -t load_avx -w M0:1GB -w M0:1GB 
+--------------------------------------------------------------------------------
+Cycles:                 27304960876
+CPU Clock:              2394326134
+Cycle Clock:            2394326134
+Time:                   1.140403e+01 sec
+Iterations:             18432
+Iterations per thread:  512
+Inner loop executions:  434027
+Size (Byte):            1999996416
+Size per thread:        55555456
+Number of Flops:        0
+MFlops/s:               0.00
+Data volume (Byte):     1023998164992
+MByte/s:                89792.68
+Cycles per update:      0.213320
+Cycles per cacheline:   1.706563
+Loads per update:       1
+Stores per update:      0
+Load bytes per element: 8
+Store bytes per elem.:  0
+Instructions:           55999899664
+UOPs:                   47999913984
+--------------------------------------------------------------------------------
