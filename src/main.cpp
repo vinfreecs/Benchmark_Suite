@@ -52,7 +52,10 @@ int main(int argc, char *argv[]) {
     delete a1;
     delete a2;
   } else if (input_kernal == "spmv") {
-    read_matrix("matrices/garon2.mtx");
+    csr mat;
+    read_matrix("matrices/garon2.mtx",mat);
+    std::cout<<"Rows : "<<mat.rows<<" Cols : "<<mat.cols<<" nnz : "<<mat.nnz<<std::endl;
+
   } else {
     std::cerr << "This kernal is not yet available" << std::endl;
   }
