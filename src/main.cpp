@@ -1,15 +1,14 @@
 #include "kernals.hpp"
 #include "mmio.h"
+#include "spmv.hpp"
 #include "timing.h"
 #include "vec.hpp"
 #include <array>
 #include <chrono>
 #include <iostream>
-#include <memory>
 #include <omp.h>
 #include <string>
 #include <vector>
-#include "spmv.hpp"
 
 #define PRINT_KERNAL(kernal)                                                   \
   std::cout << "-- BENCHMARKING " << kernal << " --" << std::endl;             \
@@ -29,35 +28,76 @@ int main(int argc, char *argv[]) {
   int N = isdigit(*argv[2]) ? std::stoi(argv[2]) : 1000; // size of the aray
   int iter =
       isdigit(*argv[3]) ? std::stod(argv[3]) : 1000; // number of iterations
+  int warmupIter = 80; // warmup iteration to avoid caching effects
+  int N = isdigit(*argv[2]) ? std::stoi(argv[2]) : 1000; // size of the aray
+  int iter =
+      isdigit(*argv[3]) ? std::stod(argv[3]) : 1000; // number of iterations
 
   std::string input_kernal = argv[1];
 
+  //   if (input_kernal == "axpby") {
+  //     PRINT_KERNAL("AXPBY");
+  //     std::vector<uninitialized<double>> a1(N);
+  // #pragma omp parallel for schedule(static)
+  //     for (int i = 0; i < N; i++) {
+  //       a1[i] = 0.1;
+  //     }
+  //     std::vector<uninitialized<double>> a2(N);
+  // #pragma omp parallel for schedule(static)
+  //     for (int i = 0; i < N; i++) {
+  //       a2[i] = 0.1;
+  //     }
+  //     std::vector<uninitialized<double>> a3(N);
+  // #pragma omp parallel for schedule(static)
+  //     for (int i = 0; i < N; i++) {
+  //       a3[i] = 0.1;
+  //     }
+  //     HARNESS(axpby(a3, a2, a1, 1, 2, N))
+  //   }
+
   if (input_kernal == "axpby") {
     PRINT_KERNAL("AXPBY");
-    auto a1 = new vec(N);
-    auto a2 = new vec(N);
-    auto a3 = new vec(N);
+    Vec a1(N);
+#pragma omp parallel for schedule(static)
+    for (int i = 0; i < N; i++) {
+      a1[i] = 0.1;
+    }
+    Vec a2(N);
+#pragma omp parallel for schedule(static)
+    for (int i = 0; i < N; i++) {
+      a2[i] = 0.1;
+    }
+    Vec a3(N);
+#pragma omp parallel for schedule(static)
+    for (int i = 0; i < N; i++) {
+      a3[i] = 0.1;
+    }
+    double mult_value = 3.0; // this is the number of flops
+    HARNESS(axpby(a3, a2, a1, 1, 2, N), mult_value)
+  }
 
-    HARNESS(axpby(a3, a2, a1, 1, 2, N))
-
-    delete a1;
-    delete a2;
-    delete a3;
-  } else if (input_kernal == "dot") {
+  else if (input_kernal == "dot") {
     PRINT_KERNAL("DOT")
-    auto a1 = new vec(N);
-    auto a2 = new vec(N);
+    Vec a1(N);
+#pragma omp parallel for schedule(static)
+    for (int i = 0; i < N; i++) {
+      a1[i] = 0.1;
+    }
+    Vec a2(N);
+#pragma omp parallel for schedule(static)
+    for (int i = 0; i < N; i++) {
+      a2[i] = 0.1;
+    }
     double dot_result = 0.0;
-    HARNESS(dot(dot_result, a1, a2, N))
-    delete a1;
-    delete a2;
+    double mult_value = 2.0; // is the number of flops
+    HARNESS(dot(dot_result, a1, a2, N), mult_value)
   } else if (input_kernal == "spmv") {
     csr mat;
-    read_matrix("matrices/garon2.mtx",mat);
-    std::cout<<"Rows : "<<mat.rows<<" Cols : "<<mat.cols<<" nnz : "<<mat.nnz<<std::endl;
-
+    read_matrix("matrices/garon2.mtx", mat);
+    std::cout << "Rows : " << mat.rows << " Cols : " << mat.cols
+              << " nnz : " << mat.nnz << std::endl;
   } else {
-    std::cerr << "This kernal is not yet available" << std::endl;
+    std::cerr << "This kernal is not yet available \n";
   }
   return 0;
 }
