@@ -14,4 +14,5 @@ template <typename T> struct NoInitAllocator : public std::allocator<T> {
   void construct(U *p, Args &&...args) {}
 };
 
-using Vec = std::vector<double, NoInitAllocator<double>>;
+using VecND = std::vector<double, NoInitAllocator<double>>;
+using VecNI = std::vector<double, NoInitAllocator<int>>;
