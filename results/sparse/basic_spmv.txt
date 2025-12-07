@@ -1,0 +1,18 @@
+succesfully read the sparse matrix
+Time taken : 4.67419e-05
+Performance : 83.5668GFlops/s 
+succesfully read the sparse matrix
+Time taken : 0.000532767
+Performance : 73.3167GFlops/s 
+succesfully read the sparse matrix
+Time taken : 0.00343339
+Performance : 113.767GFlops/s 
+succesfully read the sparse matrix
+Time taken : 0.0504889
+Performance : 77.3649GFlops/s 
+succesfully read the sparse matrix
+Time taken : 0.0863298
+Performance : 90.4918GFlops/s 
+succesfully read the sparse matrix
+Time taken : 0.00999233
+Performance : 78.1813GFlops/s 

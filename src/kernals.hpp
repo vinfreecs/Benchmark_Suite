@@ -1,28 +1,6 @@
 #pragma once
 #include "vec.hpp"
 
-#define PRINT_KERNAL(kernal)                                                   \
-  std::cout << "-- BENCHMARKING " << kernal << " -- \n";                       \
-  std::cout << "The number of iterations " << iter                             \
-            << " the size of the array " << N << "\n";
-
-#define HARNESS(kernal, mult_value)                                            \
-  for (int wit = 0; wit < warmupIter; wit++) {                                 \
-    kernal;                                                                    \
-  }                                                                            \
-  double start, end;                                                           \
-  start = getTimeStamp();                                                      \
-  for (int it = 0; it < iter; it++) {                                          \
-    kernal;                                                                    \
-  }                                                                            \
-  end = getTimeStamp();                                                        \
-  double duration = end - start;                                               \
-  std::cout << "Time taken : " << duration << "\n";                            \
-  std::cout << "Performance : "                                                \
-            << ((double)((double)iter * (double)N) * mult_value) /             \
-                   (duration * 1e9)                                            \
-            << "GFlops/s \n";
-
 // This is a axpby function which takes in 1D arrays and return an 1D array
 // after computation C = aX + bY
 void axpby(VecND &ans, const VecND &vec1, const VecND &vec2, double a, double b,

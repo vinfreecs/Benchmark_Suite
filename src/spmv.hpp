@@ -2,7 +2,7 @@
 #include "mmio.h"
 #include "vec.hpp"
 #include <iostream>
-#include <iterator>
+
 class csr {
 public:
   int rows, cols, nnz;
@@ -49,7 +49,9 @@ void read_matrix(const char *file, csr &sm) {
   // std::cout<<"The number of zeros : "<<count<<std::endl;
 }
 
-void spmv_vector_mult(csr &smat, VecND rhs, VecND lhs) {
+// a simple y += S*x  a simple sparse matrix multiplication
+void spmv_vector_mult(csr &smat, VecND &rhs, VecND &lhs) {
+#pragma omp parallel for schedule(static)
   for (int i = 0; i < smat.rows; i++) {
     int start = smat.row_start[i];
     int end = smat.row_start[i + 1];

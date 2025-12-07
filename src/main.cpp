@@ -1,6 +1,7 @@
 #include "kernals.hpp"
 #include "spmv.hpp"
 #include "timing.h"
+#include "utils.hpp"
 #include "vec.hpp"
 #include <iostream>
 #include <omp.h>
@@ -38,7 +39,7 @@ int main(int argc, char *argv[]) {
       a3[i] = 0.1;
     }
     const double mult_value = 3.0; // this is the number of flops
-    HARNESS(axpby(a3, a2, a1, 1, 2, N), mult_value)
+    HARNESS(axpby(a3, a2, a1, 1, 2, N), mult_value, N)
   }
 
   else if (input_kernal == "dot") {
@@ -55,12 +56,29 @@ int main(int argc, char *argv[]) {
     }
     double dot_result = 0.0;
     const double mult_value = 2.0; // is the number of flops
-    HARNESS(dot(dot_result, a1, a2, N), mult_value)
+    HARNESS(dot(dot_result, a1, a2, N), mult_value, N)
   } else if (input_kernal == "spmv") {
     csr mat;
     read_matrix("matrices/garon2.mtx", mat);
     std::cout << "Rows : " << mat.rows << " Cols : " << mat.cols
               << " nnz : " << mat.nnz << "\n";
+    std::cout << "number of elements in values : " << mat.values.size()
+              << std::endl;
+  } else if (input_kernal == "spmv_mult") {
+    csr mat;
+    read_matrix("matrices/garon2.mtx", mat);
+    VecND rhs(mat.rows);
+#pragma omp parallel for schedule(static)
+    for (int i = 0; i < N; i++) {
+      rhs[i] = 0.1;
+    }
+    VecND lhs(mat.rows);
+#pragma omp parallel for schedule(static)
+    for (int i = 0; i < N; i++) {
+      lhs[i] = 0.1;
+    }
+    // modify this to reflect the actual Flops
+    HARNESS(spmv_vector_mult(mat, rhs, lhs), 1, mat.nnz)
   } else {
     std::cerr << "This kernal is not yet available \n";
   }
