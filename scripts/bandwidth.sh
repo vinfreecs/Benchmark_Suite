@@ -21,7 +21,8 @@ for size in 10KB 30KB 50KB 100KB 200KB 250KB 350KB 432KB 500KB 1MB 3MB 7MB 12MB 
         gb_val=$number
     fi
 
-    likwid-bench -t load_avx -w M0:${size} -w M0:${size} | \
+#one socket 
+    likwid-bench -t load_avx -w M0:${size} -w M1:${size} | \
     awk -v gb="$gb_val" '/MByte\/s:/ { printf "%.6f,%s\n", gb, $NF }' >> $outfile
 
 done
