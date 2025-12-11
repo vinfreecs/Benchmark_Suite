@@ -15,11 +15,11 @@ int main(int argc, char *argv[]) {
     return 1;
   }
 
-  int warmupIter = 80; // warmup iteration to avoid caching effects
   int N = isdigit(*argv[2]) ? std::stoi(argv[2]) : 1000; // size of the aray
   int iter =
       isdigit(*argv[3]) ? std::stod(argv[3]) : 1000; // number of iterations
   std::string input_kernal = argv[1];
+  int warmupIter = (int)(iter / 5); // warmup iteration to avoid caching effects
 
   if (input_kernal == "axpby") {
     PRINT_KERNAL("AXPBY");
@@ -52,7 +52,7 @@ int main(int argc, char *argv[]) {
     VecND a2(N);
 #pragma omp parallel for schedule(static)
     for (int i = 0; i < N; i++) {
-      a2[i] = 0.1;
+      a2[i] = 0.2;
     }
     double dot_result = 0.0;
     const double mult_value = 2.0; // is the number of flops
