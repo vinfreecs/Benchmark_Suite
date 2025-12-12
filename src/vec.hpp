@@ -15,4 +15,4 @@ template <typename T> struct NoInitAllocator : public std::allocator<T> {
 };
 
 using VecND = std::vector<double, NoInitAllocator<double>>;
-using VecNI = std::vector<double, NoInitAllocator<int>>;
+using VecNI = std::vector<int, NoInitAllocator<int>>;
