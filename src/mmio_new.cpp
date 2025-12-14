@@ -4,6 +4,7 @@
 #include <string>
 
 // TODO verify
+// TODO a templated version for float too?
 int mm_read_unsymmetric_sparse_mord(const char *fname, int &M_, int &N_,
                                     int &nz_, VecND &val_, VecNI &I_,
                                     VecNI &J_) {
@@ -12,9 +13,6 @@ int mm_read_unsymmetric_sparse_mord(const char *fname, int &M_, int &N_,
   MM_typecode matcode;
   int M, N, nz;
   int i;
-  VecND val;
-  VecNI I;
-  VecNI J;
 
   if ((f = std::fopen(fname, "r")) == NULL) {
     return -1;
@@ -42,9 +40,16 @@ int mm_read_unsymmetric_sparse_mord(const char *fname, int &M_, int &N_,
   N_ = N;
   nz_ = nz;
 
-  I.resize(nz);
-  J.resize(nz);
-  val.resize(nz);
+  I_.resize(nz);
+  J_.resize(nz);
+  val_.resize(nz);
 
   // TODO move or directly modify the give vectors??
+  for (i = 0; i < nz; i++) {
+    fscanf(f, "%d %d %lg\n", &I_[i], &J_[i], &val_[i]);
+    I_[i]--; /* adjust from 1-based to 0-based */
+    J_[i]--;
+  }
+  fclose(f);
+  return 0;
 }

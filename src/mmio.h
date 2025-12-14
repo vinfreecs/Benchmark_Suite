@@ -6,6 +6,8 @@
  *
  */
 
+#include "vec.hpp"
+
 #ifndef MM_IO_H
 #define MM_IO_H
 
@@ -119,6 +121,10 @@ int mm_read_mtx_crd_entry(FILE *f, int *I, int *J, double *real, double *img,
 
 int mm_read_unsymmetric_sparse(const char *fname, int *M_, int *N_, int *nz_,
                                double **val_, int **I_, int **J_);
+
+int mm_read_unsymmetric_sparse_mord(const char *fname, int &M_, int &N_,
+                                    int &nz_, VecND &val_, VecNI &I_,
+                                    VecNI &J_);
 
 template <typename VT, typename IT>
 int mm_read_unsymmetric_sparse(const char *fname, IT *M_, IT *N_, IT *nz_,
