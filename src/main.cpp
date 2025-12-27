@@ -60,18 +60,13 @@ int main(int argc, char *argv[]) {
   } else if (input_kernal == "spmv") {
     csr mat;
     read_matrix("matrices/garon2.mtx", mat);
-    std::cout << "\nRows : " << mat.rows << " Cols : " << mat.cols
-              << " nnz : " << mat.nnz << "\n";
-    std::cout << "number of elements in values : " << mat.values.size()
-              << std::endl;
-    std::cout << "the size of row_start : " << mat.row_start.size()
-              << std::endl;
-    std::cout << "the size of col_idx : " << mat.col_idx.size() << std::endl;
-    std::cout << "the size of values : " << mat.values.size() << std::endl;
+    PRINT_SPARSE_DETAILS(mat);
   } else if (input_kernal == "spmv_mult") {
     csr mat;
     read_matrix("matrices/garon2.mtx", mat);
+    PRINT_SPARSE_DETAILS(mat);
     VecND rhs(mat.rows);
+    N = mat.rows; // we want all the values in the array to some value TODO
 #pragma omp parallel for schedule(static)
     for (int i = 0; i < N; i++) {
       rhs[i] = 0.1;

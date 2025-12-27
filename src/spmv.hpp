@@ -142,16 +142,6 @@ void read_matrix(const char *file, csr &sm) {
   delete[] values_unsorted_;
   delete[] rows_unsorted_;
 
-  std::cout << "\n These are first 20 col \n";
-  for (int i = 0; i < 100; i++) {
-    std::cout << col[i] << " ";
-  }
-
-  std::cout << "\n These are first 20 row \n";
-  for (int i = 0; i < 100; i++) {
-    std::cout << row[i] << " ";
-  }
-
   sm.rows = rows_;
   sm.cols = cols_;
   sm.nnz = nnz_;
