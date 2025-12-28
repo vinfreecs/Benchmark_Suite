@@ -59,11 +59,19 @@ int main(int argc, char *argv[]) {
     HARNESS(dot(dot_result, a1, a2, N), mult_value, N)
   } else if (input_kernal == "spmv") {
     csr mat;
-    read_matrix("matrices/garon2.mtx", mat);
+    read_matrix("matrices/kkt_power.mtx", mat);
+    // std::cout << "\n row_start values : \n";
+    // for (int i = 0; i < 20; i++) {
+    //   std::cout << " " << mat.row_start[i] << " ";
+    // }
+    // std::cout << "\n col_idx values : \n";
+    // for (int i = 0; i < 20; i++) {
+    //   std::cout << " " << mat.col_idx[i] << " ";
+    // }
     PRINT_SPARSE_DETAILS(mat);
   } else if (input_kernal == "spmv_mult") {
     csr mat;
-    read_matrix("matrices/garon2.mtx", mat);
+    read_matrix("matrices/kkt_power.mtx", mat);
     PRINT_SPARSE_DETAILS(mat);
     VecND rhs(mat.rows);
     N = mat.rows; // we want all the values in the array to some value TODO

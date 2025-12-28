@@ -10,3 +10,5 @@ scripts/misc
 benchmark
 fritz_ice_lake_topology_single_node.txt
 history_commands.txt
+matrices/
+*.mtx
