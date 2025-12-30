@@ -166,6 +166,14 @@ void read_matrix(const char *file, csr &sm) {
   delete[] col;
 }
 
+void calculate_b_c(csr &mat) {
+  double B_c = (12 * mat.nnz + 20 * mat.rows + 8 * mat.cols) / (2 * mat.nnz);
+  std::cout << "code balance : " << B_c << " \n";
+  double nnc = mat.nnz / mat.cols;
+  double alpha = 1 / nnc;
+  std::cout << "alpha for this parse matrix is : " << alpha << std::endl;
+}
+
 // a simple y += S*x  a simple sparse matrix multiplication
 void spmv_vector_mult(csr &smat, VecND &rhs, VecND &lhs) {
 #pragma omp parallel for schedule(static)

@@ -72,7 +72,7 @@ int main(int argc, char *argv[]) {
   } else if (input_kernal == "spmv_mult") {
     csr mat;
     read_matrix("matrices/kkt_power.mtx", mat);
-    PRINT_SPARSE_DETAILS(mat);
+    // PRINT_SPARSE_DETAILS(mat);
     VecND rhs(mat.rows);
     N = mat.rows; // we want all the values in the array to some value TODO
 #pragma omp parallel for schedule(static)
@@ -86,6 +86,7 @@ int main(int argc, char *argv[]) {
     }
     // modify this to reflect the actual Flops
     HARNESS(spmv_vector_mult(mat, rhs, lhs), 1, mat.nnz)
+    calculate_b_c(mat);
   } else {
     std::cerr << "This kernal is not yet available \n";
   }

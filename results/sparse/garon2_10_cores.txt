@@ -1,0 +1,32 @@
+SPMV BENCHMARK
+Benchmarking across 1 Node
+ no: of threads 1
+Time taken : 0.239969
+Performance : 0.813869GFlops/s 
+ no: of threads 2
+Time taken : 0.122407
+Performance : 1.59553GFlops/s 
+ no: of threads 3
+Time taken : 0.0823087
+Performance : 2.37282GFlops/s 
+ no: of threads 4
+Time taken : 0.0683731
+Performance : 2.85644GFlops/s 
+ no: of threads 5
+Time taken : 0.0598018
+Performance : 3.26585GFlops/s 
+ no: of threads 6
+Time taken : 0.0528654
+Performance : 3.69435GFlops/s 
+ no: of threads 7
+Time taken : 0.0484079
+Performance : 4.03454GFlops/s 
+ no: of threads 8
+Time taken : 0.0455917
+Performance : 4.28375GFlops/s 
+ no: of threads 9
+Time taken : 0.0428788
+Performance : 4.55479GFlops/s 
+ no: of threads 10
+Time taken : 0.0403412
+Performance : 4.84129GFlops/s 
