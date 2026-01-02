@@ -1,31 +1,14 @@
 SPMV BENCHMARK
 Benchmarking across 1 Node
- no: of threads 1
-Performance : 0.456668GFlops/s 
- no: of threads 2
-Time taken : 0.0865381
-Performance : 0.844291GFlops/s 
- no: of threads 3
-Time taken : 0.0629848
-Performance : 1.16001GFlops/s 
- no: of threads 4
-Time taken : 0.0482952
-Performance : 1.51285GFlops/s 
- no: of threads 5
-Time taken : 0.0397676
-Performance : 1.83726GFlops/s 
- no: of threads 6
-Time taken : 0.034982
-Performance : 2.0886GFlops/s 
- no: of threads 7
-Time taken : 0.0313152
-Performance : 2.33316GFlops/s 
- no: of threads 8
-Time taken : 0.0290889
-Performance : 2.51172GFlops/s 
- no: of threads 9
-Time taken : 0.0272035
-Performance : 2.68581GFlops/s 
- no: of threads 10
-Time taken : 0.0258536
-Performance : 2.82604GFlops/s 
+matrix:kkt_power
+threads,time,performance
+ 1,,0.456668GFlops/s 
+ 2,0.0865381,0.844291GFlops/s 
+ 3,0.0629848,1.16001GFlops/s 
+ 4,0.0482952,1.51285GFlops/s 
+ 5,0.0397676,1.83726GFlops/s 
+ 6, 0.034982,2.0886GFlops/s 
+ 7,0.0313152,2.33316GFlops/s 
+ 8,0.0290889,2.51172GFlops/s 
+ 9,0.0272035,2.68581GFlops/s 
+ 10,0.0258536,2.82604GFlops/s 
