@@ -1,12 +1,12 @@
 # Compiler
 CXX = icpx
 # Flags
-CXXFLAGS = -O3 -xHost
+CXXFLAGS = -std=c++20 -O3 -xHost
 CXXFLAGS += -qopenmp
 
 # Target and source files
 TARGET = benchmark
-SRC = src/main.cpp src/mmio_new.cpp src/timing.c src/mmio.c
+SRC = src/main.cpp src/timing.c src/mmio.cpp
 
 # Build rule
 $(TARGET): $(SRC)

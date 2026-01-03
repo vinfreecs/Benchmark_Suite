@@ -23,12 +23,21 @@ void jacobi_fused_iteration(const crs &A, const VecND &b, const VecND &x_new,
   }
 }
 
+double err_norm(const VecND &x_new, const VecND &x_old) {
+  double ans = 0;
+#pragma omp parallel for schedule(static) reduction(+ : ans)
+  for (int i = 0; i < x_new.size(); i++) {
+    ans += x_new[i] - x_old[i];
+  }
+  return ans;
+}
+
 void jacobi(int maxIter, const crs &A, const VecND &b, const VecND &x_new,
             const VecND &x_old) {
   for (int k = 0; k < maxIter; k++) {
     jacobi_fused_iteration(A, b, x_new, x_old);
     // TODO omplement norm
-    double error = norm(x_old, x_new);
+    double error = err_norm(x_old, x_new);
     double tolerance = 0.001;
     if (error < tolerance) {
       return;

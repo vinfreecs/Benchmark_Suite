@@ -6,15 +6,13 @@
 // TODO check why this is better than chrono
 #ifdef __cplusplus
 
-extern "C"
-{
+extern "C" {
 #endif
 
-    double getTimeStamp();
-    double getTimeResolution();
+double getTimeStamp();
+double getTimeResolution();
 
 #ifdef __cplusplus
-    
 }
 #endif
 
