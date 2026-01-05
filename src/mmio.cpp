@@ -6,11 +6,6 @@
  *
  */
 
-#include <ctype.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
 #include "mmio.hpp"
 
 int mm_read_unsymmetric_sparse(const char *fname, int *M_, int *N_, int *nz_,

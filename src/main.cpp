@@ -1,3 +1,4 @@
+#include "jacobi.hpp"
 #include "kernals.hpp"
 #include "spmv.hpp"
 #include "timing.h"
@@ -89,25 +90,28 @@ int main(int argc, char *argv[]) {
     }
     // modify this to reflect the actual Flops
     HARNESS(spmv_vector_mult(mat, rhs, lhs), 1, mat.nnz)
-  }
-  // else if (input_kernal == "jacobi") {
-  //     csr A;
-  //     read_matrix("matrices/kkt_power.mtx", A);
-  //     VecND b(A.rows);
-  //     N = A.rows;
-  // #pragma omp parallel for schedule(static)
-  //     for (int i = 0; i < N; i++) {
-  //       b[i] = 0.1;
-  //     }
-  //     VecND x(A.rows);
-  // #pragma omp parallel for schedule(static)
-  //     for (int i = 0; i < N; i++) {
-  //       x[i] = 0.0;
-  //     }
-  //     int maxIter = 10000;
-  //     jacobi(maxIter, &A, b, x_new, x_old);
-  //   }
-  else {
+  } else if (input_kernal == "jacobi") {
+    csr A;
+    read_matrix("matrices/kkt_power.mtx", A);
+    VecND b(A.rows);
+    N = A.rows;
+#pragma omp parallel for schedule(static)
+    for (int i = 0; i < N; i++) {
+      b[i] = 0.1;
+    }
+    VecND x_new(A.rows);
+#pragma omp parallel for schedule(static)
+    for (int i = 0; i < N; i++) {
+      x_new[i] = 0.0;
+    }
+    VecND x_old(A.rows);
+#pragma omp parallel for schedule(static)
+    for (int i = 0; i < N; i++) {
+      x_old[i] = 0.0;
+    }
+    int maxIter = 10000;
+    jacobi(maxIter, A, b, x_new, x_old);
+  } else {
     std::cerr << "This kernal is not yet available \n";
   }
   return 0;

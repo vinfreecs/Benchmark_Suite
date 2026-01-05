@@ -1,13 +1,14 @@
+#pragma once
 #include "spmv.hpp"
 #include "vec.hpp"
+#include <cmath>
 #include <utility>
 
-void jacobi_fused_iteration(const crs &A, const VecND &b, const VecND &x_new,
+void jacobi_fused_iteration(const csr &A, const VecND &b, VecND &x_new,
                             const VecND &x_old) {
-  double diag_elem;
-
 #pragma omp parallel for schedule(static)
   for (int row_idx = 0; row_idx < A.rows; ++row_idx) {
+    double diag_elem = 1.0;
     double sum = 0.0;
     int start_row = A.row_start[row_idx];
     int stop_row = A.row_start[row_idx + 1];
@@ -25,20 +26,21 @@ void jacobi_fused_iteration(const crs &A, const VecND &b, const VecND &x_new,
 
 double err_norm(const VecND &x_new, const VecND &x_old) {
   double ans = 0;
+  size_t n = x_new.size();
 #pragma omp parallel for schedule(static) reduction(+ : ans)
-  for (int i = 0; i < x_new.size(); i++) {
-    ans += x_new[i] - x_old[i];
+  for (int i = 0; i < n; i++) {
+    double diff = x_new[i] - x_old[i];
+    ans += diff * diff;
   }
-  return ans;
+  return std::sqrt(ans);
 }
 
-void jacobi(int maxIter, const crs &A, const VecND &b, const VecND &x_new,
-            const VecND &x_old) {
+void jacobi(int maxIter, csr &A, VecND &b, VecND &x_new, VecND &x_old) {
+  double tolerance = 0.001;
   for (int k = 0; k < maxIter; k++) {
     jacobi_fused_iteration(A, b, x_new, x_old);
     // TODO omplement norm
     double error = err_norm(x_old, x_new);
-    double tolerance = 0.001;
     if (error < tolerance) {
       return;
     }
