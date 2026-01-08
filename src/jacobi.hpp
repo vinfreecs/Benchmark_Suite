@@ -35,14 +35,35 @@ double err_norm(const VecND &x_new, const VecND &x_old) {
   return std::sqrt(ans);
 }
 
+double get_residual(const csr &A, const VecND &b, const VecND &x) {
+  double sum_sq_diff = 0.0;
+
+#pragma omp parallel for schedule(static) reduction(+ : sum_sq_diff)
+  for (int i = 0; i < A.rows; ++i) {
+    double Ax_i = 0.0;
+    for (int j = A.row_start[i]; j < A.row_start[i + 1]; ++j) {
+      Ax_i += A.values[j] * x[A.col_idx[j]];
+    }
+
+    double r_i = b[i] - Ax_i;
+    sum_sq_diff += r_i * r_i;
+  }
+
+  return std::sqrt(sum_sq_diff);
+}
+
 void jacobi(int maxIter, csr &A, VecND &b, VecND &x_new, VecND &x_old) {
   double tolerance = 0.001;
   for (int k = 0; k < maxIter; k++) {
     jacobi_fused_iteration(A, b, x_new, x_old);
     // TODO omplement norm
     double error = err_norm(x_old, x_new);
-    if (error < tolerance) {
-      return;
+    if (k % 10 == 0) {
+      double res = get_residual(A, b, x_new);
+      std::cout << "Iter " << k << ": Residual = " << res << std::endl;
+      if (error < tolerance) {
+        return;
+      }
     }
     // TODO will not work redo
     std::swap(x_old, x_new);

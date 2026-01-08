@@ -4,7 +4,7 @@
             << " the size of the array " << N << "\n";
 
 #define HARNESS(kernal, mult_value, NN)                                        \
-  for (int wit = 0; wit < warmupIter; wit++) {                                 \
+  for (int wit = 0; wit < 0; wit++) {                                          \
     kernal;                                                                    \
   }                                                                            \
   double start, end;                                                           \
@@ -19,6 +19,17 @@
             << ((double)((double)iter * (double)NN) * mult_value) /            \
                    (duration * 1e9)                                            \
             << "GFlops/s \n";
+
+#define TIME_SOLVER(kernal, NN)                                                \
+  double start, end;                                                           \
+  start = getTimeStamp();                                                      \
+  kernal;                                                                      \
+  end = getTimeStamp();                                                        \
+  double duration = end - start;                                               \
+  std::cout << "Time taken : " << duration << "\n";                            \
+  std::cout << "Performance : "                                                \
+            << ((double)((double)iter * (double)NN)) / (duration * 1e9)        \
+            << "GLUP/s \n";
 
 #define PRINT_SPARSE_DETAILS(mat)                                              \
   std::cout << "\nRows : " << mat.rows << " Cols : " << mat.cols               \

@@ -20,17 +20,26 @@ template <typename T> T create_vector(typename T::value_type value, int N) {
 
 int main(int argc, char *argv[]) {
 
-  if (argc < 4) {
+  if (argc < 2) {
     std::cerr << "Usage " << argv[0] << " <kernal_name> <size> <iter>\n";
     std::cerr << "Choose one of these kernals \n-> axpby\n-> dot \n-> spmv \n";
     return 1;
   }
 
-  int N = isdigit(*argv[2]) ? std::stoi(argv[2]) : 1000; // size of the aray
-  int iter =
-      isdigit(*argv[3]) ? std::stod(argv[3]) : 1000; // number of iterations
   std::string input_kernal = argv[1];
-  int warmupIter = (int)(iter / 5); // warmup iteration to avoid caching effects
+  int N = 1000, iter = 1000, warmupIter = 10;
+  std::string matrix_name = "matrices/kkt_power.mtx";
+  if (input_kernal == "axpby" || input_kernal == "dot" ||
+      input_kernal == "spmv") {
+
+    int N = isdigit(*argv[2]) ? std::stoi(argv[2]) : 1000; // size of the aray
+    int iter =
+        isdigit(*argv[3]) ? std::stod(argv[3]) : 1000; // number of iterations
+    int warmupIter =
+        (int)(iter / 5); // warmup iteration to avoid caching effects
+  } else if (input_kernal == "jacobi" || input_kernal == "gauss_seidel") {
+    matrix_name = argv[3];
+  }
 
   if (input_kernal == "axpby") {
     PRINT_KERNAL("AXPBY");
@@ -65,22 +74,22 @@ int main(int argc, char *argv[]) {
     HARNESS(spmv_vector_mult(mat, rhs, lhs), 1, mat.nnz)
   } else if (input_kernal == "jacobi") {
     csr A;
-    read_matrix("matrices/kkt_power.mtx", A);
+    read_matrix("matrices/HPCG-25-25-25.mtx", A);
     N = A.rows;
-    VecND b = create_vector<VecND>(0.1, N);
+    VecND b = create_vector<VecND>(1.0, N);
     VecND x_new = create_vector<VecND>(0.0, N);
-    VecND x_old = create_vector<VecND>(0.0, N);
-    int maxIter = 10000;
-    jacobi(maxIter, A, b, x_new, x_old);
+    VecND x_old = create_vector<VecND>(0.1, N);
+    int maxIter = 1000;
+    TIME_SOLVER(jacobi(maxIter, A, b, x_new, x_old), maxIter)
   } else if (input_kernal == "gauss_seidel") {
     // TODO verify the function
     csr A;
     read_matrix("matrices/kkt_power.mtx", A);
     N = A.rows;
-    VecND b = create_vector<VecND>(0.1, N);
-    VecND x = create_vector<VecND>(0.0, N);
-    int maxIter = 10000;
-    gauss_seidel(maxIter, A, b, x);
+    VecND b = create_vector<VecND>(1.0, N);
+    VecND x = create_vector<VecND>(0.1, N);
+    int maxIter = 1000;
+    TIME_SOLVER(gauss_seidel(maxIter, A, b, x), maxIter)
   } else {
     std::cerr << "This kernal is not yet available \n";
   }
