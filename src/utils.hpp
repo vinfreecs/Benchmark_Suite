@@ -28,4 +28,4 @@
   std::cout << "the size of row_start : " << mat.row_start.size()              \
             << std::endl;                                                      \
   std::cout << "the size of col_idx : " << mat.col_idx.size() << std::endl;    \
-  std::cout << "the size of values : " << mat.values.size() << std::endl;\
+  std::cout << "the size of values : " << mat.values.size() << std::endl;

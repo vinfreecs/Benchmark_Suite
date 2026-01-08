@@ -9,6 +9,15 @@
 #include <omp.h>
 #include <string>
 
+template <typename T> T create_vector(typename T::value_type value, int N) {
+  T vec(N);
+#pragma omp parallel for schedule(static)
+  for (int i = 0; i < N; i++) {
+    vec[i] = value;
+  }
+  return vec;
+}
+
 int main(int argc, char *argv[]) {
 
   if (argc < 4) {
@@ -25,37 +34,17 @@ int main(int argc, char *argv[]) {
 
   if (input_kernal == "axpby") {
     PRINT_KERNAL("AXPBY");
-    VecND a1(N);
-#pragma omp parallel for schedule(static)
-    for (int i = 0; i < N; i++) {
-      a1[i] = 0.1;
-    }
-    VecND a2(N);
-#pragma omp parallel for schedule(static)
-    for (int i = 0; i < N; i++) {
-      a2[i] = 0.1;
-    }
-    VecND a3(N);
-#pragma omp parallel for schedule(static)
-    for (int i = 0; i < N; i++) {
-      a3[i] = 0.1;
-    }
+    VecND a1 = create_vector<VecND>(0.1, N);
+    VecND a2 = create_vector<VecND>(0.1, N);
+    VecND a3 = create_vector<VecND>(0.1, N);
     const double mult_value = 3.0; // this is the number of flops
     HARNESS(axpby(a3, a2, a1, 1, 2, N), mult_value, N)
   }
 
   else if (input_kernal == "dot") {
     PRINT_KERNAL("DOT")
-    VecND a1(N);
-#pragma omp parallel for schedule(static)
-    for (int i = 0; i < N; i++) {
-      a1[i] = 0.1;
-    }
-    VecND a2(N);
-#pragma omp parallel for schedule(static)
-    for (int i = 0; i < N; i++) {
-      a2[i] = 0.2;
-    }
+    VecND a1 = create_vector<VecND>(0.1, N);
+    VecND a2 = create_vector<VecND>(0.2, N);
     double dot_result = 0.0;
     const double mult_value = 2.0; // is the number of flops
     HARNESS(dot(dot_result, a1, a2, N), mult_value, N)
@@ -64,69 +53,32 @@ int main(int argc, char *argv[]) {
     read_matrix("matrices/lp_fffff800.mtx", mat);
     calculate_b_c(mat);
     PRINT_SPARSE_DETAILS(mat);
-    // std::cout << "\n row_start values : \n";
-    // for (int i = 0; i < 20; i++) {
-    //   std::cout << " " << mat.row_start[i] << " ";
-    // }
-    // std::cout << "\n col_idx values : \n";
-    // for (int i = 0; i < 20; i++) {
-    //   std::cout << " " << mat.col_idx[i] << " ";
-    // }
-    PRINT_SPARSE_DETAILS(mat);
   } else if (input_kernal == "spmv_mult") {
     csr mat;
     read_matrix("matrices/nv1.mtx", mat);
     // calculate_b_c(mat);
     // PRINT_SPARSE_DETAILS(mat);
-    VecND rhs(mat.rows);
-    N = mat.rows; // we want all the values in the array to some value TODO
-#pragma omp parallel for schedule(static)
-    for (int i = 0; i < N; i++) {
-      rhs[i] = 0.1;
-    }
-    VecND lhs(mat.rows);
-#pragma omp parallel for schedule(static)
-    for (int i = 0; i < N; i++) {
-      lhs[i] = 0.1;
-    }
+    N = mat.rows;
+    VecND rhs = create_vector<VecND>(0.1, N);
+    VecND lhs = create_vector<VecND>(0.1, N);
     // modify this to reflect the actual Flops
     HARNESS(spmv_vector_mult(mat, rhs, lhs), 1, mat.nnz)
   } else if (input_kernal == "jacobi") {
     csr A;
     read_matrix("matrices/kkt_power.mtx", A);
-    VecND b(A.rows);
     N = A.rows;
-#pragma omp parallel for schedule(static)
-    for (int i = 0; i < N; i++) {
-      b[i] = 0.1;
-    }
-    VecND x_new(A.rows);
-#pragma omp parallel for schedule(static)
-    for (int i = 0; i < N; i++) {
-      x_new[i] = 0.0;
-    }
-    VecND x_old(A.rows);
-#pragma omp parallel for schedule(static)
-    for (int i = 0; i < N; i++) {
-      x_old[i] = 0.0;
-    }
+    VecND b = create_vector<VecND>(0.1, N);
+    VecND x_new = create_vector<VecND>(0.0, N);
+    VecND x_old = create_vector<VecND>(0.0, N);
     int maxIter = 10000;
     jacobi(maxIter, A, b, x_new, x_old);
   } else if (input_kernal == "gauss_seidel") {
     // TODO verify the function
     csr A;
     read_matrix("matrices/kkt_power.mtx", A);
-    VecND b(A.rows);
     N = A.rows;
-#pragma omp parallel for schedule(static)
-    for (int i = 0; i < N; i++) {
-      b[i] = 0.1;
-    }
-    VecND x(A.rows);
-#pragma omp parallel for schedule(static)
-    for (int i = 0; i < N; i++) {
-      x[i] = 0.0;
-    }
+    VecND b = create_vector<VecND>(0.1, N);
+    VecND x = create_vector<VecND>(0.0, N);
     int maxIter = 10000;
     gauss_seidel(maxIter, A, b, x);
   } else {
