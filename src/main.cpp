@@ -72,7 +72,10 @@ int main(int argc, char *argv[]) {
     VecND lhs = create_vector<VecND>(0.1, N);
     // modify this to reflect the actual Flops
     HARNESS(spmv_vector_mult(mat, rhs, lhs), 1, mat.nnz)
-  } else if (input_kernal == "jacobi") {
+  }
+  // TODO verify if the residual calculation should be done after the
+  // iterations or in the solver itself inside it is slow
+  else if (input_kernal == "jacobi") {
     csr A;
     read_matrix("matrices/HPCG-25-25-25.mtx", A);
     N = A.rows;
@@ -82,9 +85,8 @@ int main(int argc, char *argv[]) {
     int maxIter = 1000;
     TIME_SOLVER(jacobi(maxIter, A, b, x_new, x_old), maxIter)
   } else if (input_kernal == "gauss_seidel") {
-    // TODO verify the function
     csr A;
-    read_matrix("matrices/kkt_power.mtx", A);
+    read_matrix("matrices/HPCG-25-25-25.mtx", A);
     N = A.rows;
     VecND b = create_vector<VecND>(1.0, N);
     VecND x = create_vector<VecND>(0.1, N);

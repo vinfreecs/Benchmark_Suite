@@ -24,17 +24,6 @@ void jacobi_fused_iteration(const csr &A, const VecND &b, VecND &x_new,
   }
 }
 
-double err_norm(const VecND &x_new, const VecND &x_old) {
-  double ans = 0;
-  size_t n = x_new.size();
-#pragma omp parallel for schedule(static) reduction(+ : ans)
-  for (int i = 0; i < n; i++) {
-    double diff = x_new[i] - x_old[i];
-    ans += diff * diff;
-  }
-  return std::sqrt(ans);
-}
-
 double get_residual(const csr &A, const VecND &b, const VecND &x) {
   double sum_sq_diff = 0.0;
 
@@ -57,11 +46,10 @@ void jacobi(int maxIter, csr &A, VecND &b, VecND &x_new, VecND &x_old) {
   for (int k = 0; k < maxIter; k++) {
     jacobi_fused_iteration(A, b, x_new, x_old);
     // TODO omplement norm
-    double error = err_norm(x_old, x_new);
     if (k % 10 == 0) {
       double res = get_residual(A, b, x_new);
       std::cout << "Iter " << k << ": Residual = " << res << std::endl;
-      if (error < tolerance) {
+      if (res < tolerance) {
         return;
       }
     }

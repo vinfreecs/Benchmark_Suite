@@ -12,7 +12,7 @@ void gs_fused_iteration(csr &A, VecND &b, VecND &x) {
 
     for (int nz_idx = start_row; nz_idx < stop_row; ++nz_idx) {
       if (row_idx == A.col_idx[nz_idx]) {
-        diag_elem = A.col_idx[nz_idx];
+        diag_elem = A.values[nz_idx];
       } else {
         sum += A.values[nz_idx] * x[A.col_idx[nz_idx]];
       }
@@ -25,10 +25,14 @@ void gauss_seidel(int maxIter, csr &A, VecND &b, VecND &x) {
   double tolerance = 0.0001;
   for (int iter = 0; iter < maxIter; iter++) {
     VecND x_old = x;
+
     gs_fused_iteration(A, b, x);
-    double error = err_norm(x, x_old);
-    if (error < tolerance) {
-      return;
+    if (iter % 10 == 0) {
+      double res = get_residual(A, b, x);
+      std::cout << "Iter " << iter << ": Residual = " << res << std::endl;
+      if (res < tolerance) {
+        return;
+      }
     }
   }
 }
