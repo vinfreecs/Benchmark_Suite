@@ -46,10 +46,11 @@ void jacobi(int maxIter, csr &A, VecND &b, VecND &x_new, VecND &x_old) {
   for (int k = 0; k < maxIter; k++) {
     jacobi_fused_iteration(A, b, x_new, x_old);
     // TODO omplement norm
-    if (k % 10 == 0) {
+    if (k % 1 == 0) {
       double res = get_residual(A, b, x_new);
       std::cout << "Iter " << k << ": Residual = " << res << std::endl;
       if (res < tolerance) {
+        std::cout << "Solver : Jacobi Converged \n";
         return;
       }
     }

@@ -20,11 +20,11 @@ template <typename T> T create_vector(typename T::value_type value, int N) {
 
 int main(int argc, char *argv[]) {
 
-  if (argc < 2) {
-    std::cerr << "Usage " << argv[0] << " <kernal_name> <size> <iter>\n";
-    std::cerr << "Choose one of these kernals \n-> axpby\n-> dot \n-> spmv \n";
-    return 1;
-  }
+  // if (argc < 2) {
+  //   std::cerr << "Usage " << argv[0] << " <kernal_name> <size> <iter>\n";
+  //   std::cerr << "Choose one of these kernals \n-> axpby\n-> dot \n-> spmv
+  //   \n"; return 1;
+  // }
 
   std::string input_kernal = argv[1];
   int N = 1000, iter = 1000, warmupIter = 10;
@@ -38,7 +38,7 @@ int main(int argc, char *argv[]) {
     int warmupIter =
         (int)(iter / 5); // warmup iteration to avoid caching effects
   } else if (input_kernal == "jacobi" || input_kernal == "gauss_seidel") {
-    matrix_name = argv[3];
+    matrix_name = argv[2];
   }
 
   if (input_kernal == "axpby") {

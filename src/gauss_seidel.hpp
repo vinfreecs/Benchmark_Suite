@@ -2,6 +2,7 @@
 #include "jacobi.hpp"
 #include "spmv.hpp"
 #include "vec.hpp"
+#include <iostream>
 void gs_fused_iteration(csr &A, VecND &b, VecND &x) {
   double diag_elem = 1.0;
 
@@ -25,12 +26,12 @@ void gauss_seidel(int maxIter, csr &A, VecND &b, VecND &x) {
   double tolerance = 0.0001;
   for (int iter = 0; iter < maxIter; iter++) {
     VecND x_old = x;
-
     gs_fused_iteration(A, b, x);
-    if (iter % 10 == 0) {
+    if (iter % 1 == 0) {
       double res = get_residual(A, b, x);
       std::cout << "Iter " << iter << ": Residual = " << res << std::endl;
       if (res < tolerance) {
+        std::cout << "Solver : Gauss Seidel Converged \n";
         return;
       }
     }
