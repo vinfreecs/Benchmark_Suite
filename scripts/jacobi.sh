@@ -14,7 +14,7 @@ echo " no: of threads 72"
 
 srun \
 --export=ALL,OMP_NUM_THREADS=72,OMP_PLACES=cores,OMP_PROC_BIND=close \
-./benchmark gauss_seidel
+./benchmark jacobi matrices/HPCG-25-25-25.mtx
 
 
 echo "---------------------------------------------------------------"

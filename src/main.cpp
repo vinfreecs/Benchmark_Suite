@@ -20,24 +20,27 @@ template <typename T> T create_vector(typename T::value_type value, int N) {
 
 int main(int argc, char *argv[]) {
 
-  // if (argc < 2) {
-  //   std::cerr << "Usage " << argv[0] << " <kernal_name> <size> <iter>\n";
-  //   std::cerr << "Choose one of these kernals \n-> axpby\n-> dot \n-> spmv
-  //   \n"; return 1;
-  // }
+  if (argc < 2) {
+    std::cerr << "Usage " << argv[0] << " <kernal_name> \n";
+    std::cerr << "Choose one of these kernals \n-> axpby <size> <iter>\n-> dot "
+                 "<size> <iter>\n-> read_sparse <matrix_path>\n-> spmv "
+                 "<matrix_path>\n-> jacobi "
+                 "<matrix_path>\n-> gauss_seidel <matrix_path>\n ";
+    return 1;
+  }
 
   std::string input_kernal = argv[1];
   int N = 1000, iter = 1000, warmupIter = 10;
-  std::string matrix_name = "matrices/kkt_power.mtx";
-  if (input_kernal == "axpby" || input_kernal == "dot" ||
-      input_kernal == "spmv") {
+  std::string matrix_name = "matrices/matrix_band_small.mtx";
+  if (input_kernal == "axpby" || input_kernal == "dot") {
 
     int N = isdigit(*argv[2]) ? std::stoi(argv[2]) : 1000; // size of the aray
     int iter =
         isdigit(*argv[3]) ? std::stod(argv[3]) : 1000; // number of iterations
     int warmupIter =
         (int)(iter / 5); // warmup iteration to avoid caching effects
-  } else if (input_kernal == "jacobi" || input_kernal == "gauss_seidel") {
+  } else if (input_kernal == "jacobi" || input_kernal == "gauss_seidel" ||
+             input_kernal == "read_sparse" || input_kernal == "spmv") {
     matrix_name = argv[2];
   }
 
@@ -57,12 +60,12 @@ int main(int argc, char *argv[]) {
     double dot_result = 0.0;
     const double mult_value = 2.0; // is the number of flops
     HARNESS(dot(dot_result, a1, a2, N), mult_value, N)
-  } else if (input_kernal == "spmv") {
+  } else if (input_kernal == "read_sparse") {
     csr mat;
-    read_matrix("matrices/lp_fffff800.mtx", mat);
+    read_matrix(&matrix_name[0], mat);
     calculate_b_c(mat);
     PRINT_SPARSE_DETAILS(mat);
-  } else if (input_kernal == "spmv_mult") {
+  } else if (input_kernal == "spmv") {
     csr mat;
     read_matrix("matrices/nv1.mtx", mat);
     // calculate_b_c(mat);
@@ -77,7 +80,7 @@ int main(int argc, char *argv[]) {
   // iterations or in the solver itself inside it is slow
   else if (input_kernal == "jacobi") {
     csr A;
-    read_matrix("matrices/HPCG-25-25-25.mtx", A);
+    read_matrix(&matrix_name[0], A);
     N = A.rows;
     VecND b = create_vector<VecND>(1.0, N);
     VecND x_new = create_vector<VecND>(0.0, N);
@@ -86,7 +89,7 @@ int main(int argc, char *argv[]) {
     TIME_SOLVER(jacobi(maxIter, A, b, x_new, x_old), maxIter)
   } else if (input_kernal == "gauss_seidel") {
     csr A;
-    read_matrix("matrices/HPCG-25-25-25.mtx", A);
+    read_matrix(&matrix_name[0], A);
     N = A.rows;
     VecND b = create_vector<VecND>(1.0, N);
     VecND x = create_vector<VecND>(0.1, N);
