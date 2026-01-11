@@ -22,7 +22,7 @@ void gs_fused_iteration(csr &A, VecND &b, VecND &x) {
   }
 }
 
-void gauss_seidel(int maxIter, csr &A, VecND &b, VecND &x) {
+void gauss_seidel(int &maxIter, csr &A, VecND &b, VecND &x) {
   double tolerance = 0.0001;
   for (int iter = 0; iter < maxIter; iter++) {
     VecND x_old = x;
@@ -32,6 +32,7 @@ void gauss_seidel(int maxIter, csr &A, VecND &b, VecND &x) {
       std::cout << "Iter " << iter << ": Residual = " << res << std::endl;
       if (res < tolerance) {
         std::cout << "Solver : Gauss Seidel Converged \n";
+        maxIter = iter + 1;
         return;
       }
     }

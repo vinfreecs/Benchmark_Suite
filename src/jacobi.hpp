@@ -41,8 +41,8 @@ double get_residual(const csr &A, const VecND &b, const VecND &x) {
   return std::sqrt(sum_sq_diff);
 }
 
-void jacobi(int maxIter, csr &A, VecND &b, VecND &x_new, VecND &x_old) {
-  double tolerance = 0.001;
+void jacobi(int &maxIter, csr &A, VecND &b, VecND &x_new, VecND &x_old) {
+  double tolerance = 0.0001;
   for (int k = 0; k < maxIter; k++) {
     jacobi_fused_iteration(A, b, x_new, x_old);
     // TODO omplement norm
@@ -51,6 +51,7 @@ void jacobi(int maxIter, csr &A, VecND &b, VecND &x_new, VecND &x_old) {
       std::cout << "Iter " << k << ": Residual = " << res << std::endl;
       if (res < tolerance) {
         std::cout << "Solver : Jacobi Converged \n";
+        maxIter = k + 1;
         return;
       }
     }

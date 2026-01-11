@@ -82,19 +82,19 @@ int main(int argc, char *argv[]) {
     csr A;
     read_matrix(&matrix_name[0], A);
     N = A.rows;
-    VecND b = create_vector<VecND>(1.0, N);
+    VecND b = create_vector<VecND>(2.0, N);
     VecND x_new = create_vector<VecND>(0.0, N);
-    VecND x_old = create_vector<VecND>(0.1, N);
+    VecND x_old = create_vector<VecND>(1.0, N);
     int maxIter = 1000;
-    TIME_SOLVER(jacobi(maxIter, A, b, x_new, x_old), maxIter)
+    TIME_SOLVER(jacobi(maxIter, A, b, x_new, x_old), maxIter, A)
   } else if (input_kernal == "gauss_seidel") {
     csr A;
     read_matrix(&matrix_name[0], A);
     N = A.rows;
-    VecND b = create_vector<VecND>(1.0, N);
-    VecND x = create_vector<VecND>(0.1, N);
+    VecND b = create_vector<VecND>(2.0, N);
+    VecND x = create_vector<VecND>(1.0, N);
     int maxIter = 1000;
-    TIME_SOLVER(gauss_seidel(maxIter, A, b, x), maxIter)
+    TIME_SOLVER(gauss_seidel(maxIter, A, b, x), maxIter, A)
   } else {
     std::cerr << "This kernal is not yet available \n";
   }
