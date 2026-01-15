@@ -1,0 +1,68 @@
+/benchmark cg matrices/HPCG-128-128-128.mtx
+matrices/HPCG-128-128-128.mtx
+
+Rows : 2097152 Cols : 2097152 nnz : 55742968
+number of elements in values : 55742968
+the size of row_start : 2097153
+the size of col_idx : 55742968
+the size of values : 55742968
+the size of values : 425
+the size of col_idx : 212
+the size of row_start : 8
+the total size taken up by the sparse matrix : 645MB
+Iter 0: Residual = 1896.41
+Iter 1: Residual = 2037.55
+Iter 2: Residual = 2063.36
+Iter 3: Residual = 1532.94
+Iter 4: Residual = 931.171
+Iter 5: Residual = 533.799
+Iter 6: Residual = 308.417
+Iter 7: Residual = 184.874
+Iter 8: Residual = 117.485
+Iter 9: Residual = 80.7651
+Iter 10: Residual = 60.4106
+Iter 11: Residual = 47.8364
+Iter 12: Residual = 37.9166
+Iter 13: Residual = 28.6
+Iter 14: Residual = 20.2123
+Iter 15: Residual = 13.6104
+Iter 16: Residual = 8.99092
+Iter 17: Residual = 5.99255
+Iter 18: Residual = 4.1215
+Iter 19: Residual = 2.96254
+Iter 20: Residual = 2.21663
+Iter 21: Residual = 1.68803
+Iter 22: Residual = 1.26913
+Iter 23: Residual = 0.92213
+Iter 24: Residual = 0.645728
+Iter 25: Residual = 0.441314
+Iter 26: Residual = 0.299981
+Iter 27: Residual = 0.206594
+Iter 28: Residual = 0.146109
+Iter 29: Residual = 0.106489
+Iter 30: Residual = 0.0792415
+Iter 31: Residual = 0.0590745
+Iter 32: Residual = 0.0432872
+Iter 33: Residual = 0.0308824
+Iter 34: Residual = 0.0215165
+Iter 35: Residual = 0.0148101
+Iter 36: Residual = 0.0102181
+Iter 37: Residual = 0.00715817
+Iter 38: Residual = 0.00512727
+Iter 39: Residual = 0.00374757
+Iter 40: Residual = 0.00276454
+Iter 41: Residual = 0.00202717
+Iter 42: Residual = 0.0014602
+Iter 43: Residual = 0.00102994
+Iter 44: Residual = 0.000715173
+Iter 45: Residual = 0.00049396
+Iter 46: Residual = 0.000343209
+Iter 47: Residual = 0.000241934
+Iter 48: Residual = 0.000173482
+Iter 49: Residual = 0.000125956
+Iter 50: Residual = 9.16227e-05
+Solver : Conjugate Gradient Converged
+Time taken : 1.70244
+Performance : 29.9569iter/s
+Bandwidth : 20.2899
+Performance in Flops/s :

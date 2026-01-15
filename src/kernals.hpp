@@ -22,3 +22,19 @@ void dot(double &ans, VecND &vec1, VecND &vec2, int N) {
   }
   ans = temp_sum;
 }
+
+void sum_vectors(VecND &result_vec, const VecND &vec1, const VecND &vec2, int N,
+                 double scale = 1.0) {
+#pragma omp parallel for schedule(static)
+  for (int i = 0; i < N; ++i) {
+    result_vec[i] = vec1[i] + (scale * vec2[i]);
+  }
+}
+
+void subtract_vectors(VecND &result_vec, const VecND &vec1, const VecND &vec2,
+                      int N, double scale = 1.0) {
+#pragma omp parallel for schedule(static)
+  for (int i = 0; i < N; ++i) {
+    result_vec[i] = vec1[i] - (scale * vec2[i]);
+  }
+}

@@ -56,3 +56,87 @@
                    mat.col_idx.size() * 4 / (1024 * 1024) +                    \
                    mat.row_start.size() * 4 / (1024 * 1024)                    \
             << "MB" << std::endl;
+
+// #define Matrix_Check() \
+//     // Check for basic matrix properties
+// std::cout << "\n=== Matrix Diagnostics ===" << std::endl;
+
+// // 1. Check if any diagonal is missing or zero
+// int missing_diag = 0;
+// int zero_diag = 0;
+// int negative_diag = 0;
+
+// for (int i = 0; i < A.rows; i++) {
+//     bool found_diag = false;
+//     double diag_val = 0.0;
+
+//     for (int j = A.row_start[i]; j < A.row_start[i + 1]; j++) {
+//         if (A.col_idx[j] == i) {
+//             found_diag = true;
+//             diag_val = A.values[j];
+//             break;
+//         }
+//     }
+
+//     if (!found_diag) {
+//         missing_diag++;
+//         if (missing_diag <= 5) {
+//             std::cout << "Missing diagonal at row " << i << std::endl;
+//         }
+//     } else if (diag_val == 0.0) {
+//         zero_diag++;
+//     } else if (diag_val < 0.0) {
+//         negative_diag++;
+//         if (negative_diag <= 5) {
+//             std::cout << "Negative diagonal at row " << i << ": " << diag_val
+//             << std::endl;
+//         }
+//     }
+// }
+
+// std::cout << "Missing diagonals: " << missing_diag << std::endl;
+// std::cout << "Zero diagonals: " << zero_diag << std::endl;
+// std::cout << "Negative diagonals: " << negative_diag << std::endl;
+
+// // 2. Check diagonal dominance
+// double min_diag = 1e100;
+// double max_diag = -1e100;
+// int weak_rows = 0;
+
+// for (int i = 0; i < A.rows; i++) {
+//     double diag = 0.0;
+//     double off_diag_sum = 0.0;
+
+//     for (int j = A.row_start[i]; j < A.row_start[i + 1]; j++) {
+//         if (A.col_idx[j] == i) {
+//             diag = A.values[j];
+//             min_diag = std::min(min_diag, diag);
+//             max_diag = std::max(max_diag, diag);
+//         } else {
+//             off_diag_sum += std::abs(A.values[j]);
+//         }
+//     }
+
+//     if (diag <= off_diag_sum) {
+//         weak_rows++;
+//         if (weak_rows <= 3) {
+//             std::cout << "Row " << i << " not diagonally dominant: diag="
+//                       << diag << ", off_diag_sum=" << off_diag_sum <<
+//                       std::endl;
+//         }
+//     }
+// }
+
+// std::cout << "Diagonal range: [" << min_diag << ", " << max_diag << "]" <<
+// std::endl; std::cout << "Weakly diagonally dominant rows: " << weak_rows <<
+// "/" << A.rows << std::endl;
+
+// // 3. Sample first row
+// std::cout << "\nFirst row (row 0):" << std::endl;
+// for (int j = A.row_start[0]; j < A.row_start[1] && j < A.row_start[0] + 10;
+// j++) {
+//     std::cout << "  col=" << A.col_idx[j] << ", val=" << A.values[j] <<
+//     std::endl;
+// }
+
+// std::cout << "=========================\n" << std::endl;

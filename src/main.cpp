@@ -1,3 +1,4 @@
+#include "cg.hpp"
 #include "gauss_seidel.hpp"
 #include "jacobi.hpp"
 #include "kernals.hpp"
@@ -40,7 +41,8 @@ int main(int argc, char *argv[]) {
     int warmupIter =
         (int)(iter / 5); // warmup iteration to avoid caching effects
   } else if (input_kernal == "jacobi" || input_kernal == "gauss_seidel" ||
-             input_kernal == "read_sparse" || input_kernal == "spmv") {
+             input_kernal == "read_sparse" || input_kernal == "spmv" ||
+             input_kernal == "cg") {
     matrix_name = argv[2];
   }
 
@@ -81,6 +83,8 @@ int main(int argc, char *argv[]) {
   else if (input_kernal == "jacobi") {
     csr A;
     read_matrix(&matrix_name[0], A);
+    PRINT_SPARSE_DETAILS(A)
+
     N = A.rows;
     VecND b = create_vector<VecND>(2.0, N);
     VecND x_new = create_vector<VecND>(0.0, N);
@@ -95,6 +99,16 @@ int main(int argc, char *argv[]) {
     VecND x = create_vector<VecND>(1.0, N);
     int maxIter = 1000;
     TIME_SOLVER(gauss_seidel(maxIter, A, b, x), maxIter, A)
+  } else if (input_kernal == "cg") {
+    csr A;
+    std::cout << matrix_name << std::endl;
+    read_matrix(&matrix_name[0], A);
+    PRINT_SPARSE_DETAILS(A)
+    N = A.rows;
+    VecND b = create_vector<VecND>(2.0, N);
+    VecND x = create_vector<VecND>(1.0, N);
+    int maxIter = 1000;
+    TIME_SOLVER(cg_solver(maxIter, A, x, b), maxIter, A)
   } else {
     std::cerr << "This kernal is not yet available \n";
   }
