@@ -103,7 +103,7 @@ int main(int argc, char *argv[]) {
     csr A;
     std::cout << matrix_name << std::endl;
     read_matrix(&matrix_name[0], A);
-    PRINT_SPARSE_DETAILS(A)
+    // PRINT_SPARSE_DETAILS(A)
     N = A.rows;
     VecND b = create_vector<VecND>(2.0, N);
     VecND x = create_vector<VecND>(1.0, N);
