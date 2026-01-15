@@ -74,7 +74,7 @@ int main(int argc, char *argv[]) {
     VecND rhs = create_vector<VecND>(0.1, N);
     VecND lhs = create_vector<VecND>(0.1, N);
     // modify this to reflect the actual Flops
-    HARNESS(spmv_vector_mult(mat, rhs, lhs), 1, mat.nnz)
+    HARNESS(spmv(lhs, mat, rhs), 1, mat.nnz)
   }
   // TODO verify if the residual calculation should be done after the
   // iterations or in the solver itself inside it is slow

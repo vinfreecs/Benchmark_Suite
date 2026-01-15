@@ -175,13 +175,13 @@ void calculate_b_c(csr &mat) {
 }
 
 // a simple y += S*x  a simple sparse matrix multiplication
-void spmv_vector_mult(csr &smat, VecND &rhs, VecND &lhs) {
+void spmv(VecND &lhs, csr &smat, VecND &rhs) {
 #pragma omp parallel for schedule(static)
   for (int i = 0; i < smat.rows; i++) {
     int start = smat.row_start[i];
     int end = smat.row_start[i + 1];
     for (int j = start; j < end; j++) {
-      rhs[i] += smat.values[j] * lhs[smat.col_idx[j]];
+      lhs[i] += smat.values[j] * rhs[smat.col_idx[j]];
     }
   }
 }

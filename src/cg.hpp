@@ -10,24 +10,25 @@
 
 #pragma once
 
+#include "kernals.hpp"
 #include "spmv.hpp"
 #include "vec.hpp"
-void cg_iteration(const csr &A, const csr &L, const csr &U, VecND &A_D,
-                  VecND &A_D_inv, VecND &L_D, VecND &U_D, VecND &x_new,
-                  VecND &x_old, VecND &tmp, VecND &work, VecND &p_new,
-                  VecND &p_old, VecND &r_new, VecND &r_old, VecND *z_new,
-                  VecND &z_old) {
+void cg_iteration(csr &A, csr &L, csr &U, VecND &A_D, VecND &A_D_inv,
+                  VecND &L_D, VecND &U_D, VecND &x_new, VecND &x_old,
+                  VecND &tmp, VecND &work, VecND &p_new, VecND &p_old,
+                  VecND &r_new, VecND &r_old, VecND *z_new, VecND &z_old) {
 
   // TODO IMPLEMENT ALL THE FUNCTIONS
   // tmp <- A*p_old
-  spmv(A, p_old, tmp);
+  spmv(tmp, A, p_old);
 
   double tmp_dot;
-  tmp_dot = dot(r_old, z_old, A.cols);
+  dot(tmp_dot, r_old, z_old, A.cols);
 
   // alpha <- (r_old, z_old) / (Ap_old, p_old)
   double alpha;
-  alpha = tmp_dot / dot(tmp, p_old, A.cols);
+  dot(alpha, tmp, p_old, A.cols);
+  alpha = tmp_dot / alpha;
 
   // x_new <- x_old + alpha * p_old
   sum_vectors(x_new, x_old, p_old, A.cols, alpha);
