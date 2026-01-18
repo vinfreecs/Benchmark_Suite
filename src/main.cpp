@@ -3,7 +3,7 @@
 #include "jacobi.hpp"
 #include "kernals.hpp"
 #include "spmv.hpp"
-#include "timing.h"
+#include "timing.hpp"
 #include "utils.hpp"
 #include "vec.hpp"
 #include <iostream>

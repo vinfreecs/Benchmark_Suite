@@ -6,7 +6,7 @@ CXXFLAGS += -qopenmp
 
 # Target and source files
 TARGET = benchmark
-SRC = src/main.cpp src/timing.c src/mmio.cpp
+SRC = src/main.cpp src/mmio.cpp src/timing.cpp
 
 # Build rule
 $(TARGET): $(SRC)
