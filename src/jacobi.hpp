@@ -1,7 +1,7 @@
 #pragma once
+#include "kernals.hpp"
 #include "spmv.hpp"
 #include "vec.hpp"
-#include <cmath>
 #include <utility>
 
 void jacobi_fused_iteration(const csr &A, const VecND &b, VecND &x_new,
@@ -22,23 +22,6 @@ void jacobi_fused_iteration(const csr &A, const VecND &b, VecND &x_new,
     }
     x_new[row_idx] = (b[row_idx] - sum) / diag_elem;
   }
-}
-
-double get_residual(const csr &A, const VecND &b, const VecND &x) {
-  double sum_sq_diff = 0.0;
-
-#pragma omp parallel for schedule(static) reduction(+ : sum_sq_diff)
-  for (int i = 0; i < A.rows; ++i) {
-    double Ax_i = 0.0;
-    for (int j = A.row_start[i]; j < A.row_start[i + 1]; ++j) {
-      Ax_i += A.values[j] * x[A.col_idx[j]];
-    }
-
-    double r_i = b[i] - Ax_i;
-    sum_sq_diff += r_i * r_i;
-  }
-
-  return std::sqrt(sum_sq_diff);
 }
 
 void jacobi(int &maxIter, csr &A, VecND &b, VecND &x_new, VecND &x_old) {

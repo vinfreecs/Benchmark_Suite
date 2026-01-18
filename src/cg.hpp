@@ -10,7 +10,6 @@
 
 #pragma once
 
-#include "jacobi.hpp"
 #include "kernals.hpp"
 #include "spmv.hpp"
 #include "vec.hpp"

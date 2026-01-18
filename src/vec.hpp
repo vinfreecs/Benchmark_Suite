@@ -1,6 +1,5 @@
 #pragma once
 #include <memory>
-#include <omp.h>
 #include <vector>
 
 // custom allocator to not initalize zero when using a vector

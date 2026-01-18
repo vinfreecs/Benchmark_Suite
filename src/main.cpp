@@ -46,6 +46,8 @@ int main(int argc, char *argv[]) {
     matrix_name = argv[2];
   }
 
+  int maxIter = 1000;
+
   if (input_kernal == "axpby") {
     PRINT_KERNAL("AXPBY");
     VecND a1 = create_vector<VecND>(0.1, N);
@@ -84,12 +86,10 @@ int main(int argc, char *argv[]) {
     csr A;
     read_matrix(&matrix_name[0], A);
     PRINT_SPARSE_DETAILS(A)
-
     N = A.rows;
     VecND b = create_vector<VecND>(2.0, N);
     VecND x_new = create_vector<VecND>(0.0, N);
     VecND x_old = create_vector<VecND>(1.0, N);
-    int maxIter = 1000;
     TIME_SOLVER(jacobi(maxIter, A, b, x_new, x_old), maxIter, A)
   } else if (input_kernal == "gauss_seidel") {
     csr A;
@@ -97,7 +97,6 @@ int main(int argc, char *argv[]) {
     N = A.rows;
     VecND b = create_vector<VecND>(2.0, N);
     VecND x = create_vector<VecND>(1.0, N);
-    int maxIter = 1000;
     TIME_SOLVER(gauss_seidel(maxIter, A, b, x), maxIter, A)
   } else if (input_kernal == "cg") {
     csr A;
@@ -107,8 +106,11 @@ int main(int argc, char *argv[]) {
     N = A.rows;
     VecND b = create_vector<VecND>(2.0, N);
     VecND x = create_vector<VecND>(1.0, N);
-    int maxIter = 1000;
     TIME_SOLVER(cg_solver(maxIter, A, x, b), maxIter, A)
+  } else if (input_kernal == "pcg") {
+    csr A;
+    std::cout << matrix_name << std::endl;
+    read_matrix(&matrix_name[0], A);
   } else {
     std::cerr << "This kernal is not yet available \n";
   }
