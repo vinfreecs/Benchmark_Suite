@@ -34,8 +34,10 @@ int main(int argc, char *argv[]) {
   int N = 1000, iter = 1000, warmupIter = 10;
   std::string matrix_name = "matrices/matrix_band_small.mtx";
   if (input_kernal == "axpby" || input_kernal == "dot") {
+    std::cout << "before parsing size N : " << N << std::endl;
 
-    int N = isdigit(*argv[2]) ? std::stoi(argv[2]) : 1000; // size of the aray
+    N = isdigit(*argv[2]) ? std::stoi(argv[2]) : 1000; // size of the aray
+    std::cout << "after parsing size N : " << N << std::endl;
     int iter =
         isdigit(*argv[3]) ? std::stod(argv[3]) : 1000; // number of iterations
     int warmupIter =
@@ -49,6 +51,8 @@ int main(int argc, char *argv[]) {
   int maxIter = 1000;
 
   if (input_kernal == "axpby") {
+    std::cout << "in kernal size N : " << N << std::endl;
+
     PRINT_KERNAL("AXPBY");
     VecND a1 = create_vector<VecND>(0.1, N);
     VecND a2 = create_vector<VecND>(0.1, N);
@@ -58,6 +62,7 @@ int main(int argc, char *argv[]) {
   }
 
   else if (input_kernal == "dot") {
+    std::cout << "in kernal size N : " << N << std::endl;
     PRINT_KERNAL("DOT")
     VecND a1 = create_vector<VecND>(0.1, N);
     VecND a2 = create_vector<VecND>(0.2, N);
