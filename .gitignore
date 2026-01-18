@@ -13,3 +13,4 @@ history_commands.txt
 matrices/
 *.mtx
 *.gp
+*.o
