@@ -26,7 +26,6 @@ inline void sort_perm(int *arr, int *perm, int len, bool rev = false) {
 }
 
 void read_matrix(const char *file, csr &sm) {
-  // TODO this is a workaaround update to accomadate vector
   const char *filename = file;
   double *values_unsorted_;
   int *cols_unsorted_;

@@ -28,7 +28,6 @@ void jacobi(int &maxIter, csr &A, VecND &b, VecND &x_new, VecND &x_old) {
   double tolerance = 0.0001;
   for (int k = 0; k < maxIter; k++) {
     jacobi_fused_iteration(A, b, x_new, x_old);
-    // TODO omplement norm
     if (k % 1 == 0) {
       double res = get_residual(A, b, x_new);
       std::cout << "Iter " << k << ": Residual = " << res << std::endl;
@@ -38,7 +37,6 @@ void jacobi(int &maxIter, csr &A, VecND &b, VecND &x_new, VecND &x_old) {
         return;
       }
     }
-    // TODO will not work redo
     std::swap(x_old, x_new);
   }
 }

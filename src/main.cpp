@@ -84,10 +84,7 @@ int main(int argc, char *argv[]) {
     VecND lhs = create_vector<VecND>(0.1, N);
     // modify this to reflect the actual Flops
     HARNESS(spmv(lhs, mat, rhs), 1, mat.nnz)
-  }
-  // TODO verify if the residual calculation should be done after the
-  // iterations or in the solver itself inside it is slow
-  else if (input_kernal == "jacobi") {
+  } else if (input_kernal == "jacobi") {
     csr A;
     read_matrix(&matrix_name[0], A);
     PRINT_SPARSE_DETAILS(A)

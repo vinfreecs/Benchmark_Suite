@@ -36,7 +36,6 @@ void cg_iteration(csr &A, VecND &x_new, VecND &x_old, VecND &tmp, VecND &p_new,
 
   // beta = (r_new, r_new) / (r_old, r_old)
   double beta = 0;
-  // TODO check this
   dot(beta, r_new, r_new, A.cols);
   beta = beta / tmp_dot;
   // p_new <- z_new + beta * p_old
