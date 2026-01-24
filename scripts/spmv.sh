@@ -1,20 +1,29 @@
 #!/bin/bash -l
+
 module load intel likwid
 
-FILENAME="nv1_10_cores.txt"
+cd .. && make clean && make
 
-cd .. && make clean &&  make
+FILENAME="benchmark_results_$(date +%Y%m%d_%H%M%S).txt"
+echo "Starting Benchmark..." > "${FILENAME}"
 
-echo "SPMV BENCHMARK" 
-echo "Benchmarking across 1 Node"
+echo "SPMV BENCHMARK" | tee -a "${FILENAME}"
+echo "Benchmarking across 1 NUMA Domain " | tee -a "${FILENAME}"
 
-for t in {18,32,54,72}; 
-do
-    echo " no: of threads $((t))" 
+matrix=HPCG-128-128-128
+# for matrix in {HPCG-128-128-128}
+# do
+    echo "---------------------------------------------------------------" | tee -a "${FILENAME}"
+    echo "Matrix : ${matrix}" | tee -a "${FILENAME}"
     
-    srun --cpu-freq=2200000-2200000:performance \
-    --export=ALL,OMP_NUM_THREADS=${t},OMP_PLACES=cores,OMP_PROC_BIND=spread \
-    ./benchmark spmv matrices/kkt_power.mtx
-done
+    for t in {44..72}; 
+    do
+        echo "Running with threads: ${t}" | tee -a "${FILENAME}"
+        
+        srun --cpu-freq=2200000-2200000:performance \
+             --export=ALL,OMP_NUM_THREADS=${t},OMP_PLACES=cores,OMP_PROC_BIND=close \
+             ./benchmark spmv matrices/${matrix}.mtx >> "${FILENAME}"
+    done
+# done
 
-echo "---------------------------------------------------------------"
+echo "Done. Results saved to ${FILENAME}"

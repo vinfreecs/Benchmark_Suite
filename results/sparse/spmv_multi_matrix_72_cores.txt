@@ -1,0 +1,1163 @@
+Starting Benchmark...
+SPMV BENCHMARK
+Benchmarking across 1 NUMA Domain 
+---------------------------------------------------------------
+Matrix : garon2
+Running with threads: 1
+Time taken : 0.156908
+Performance : 0.637285GFlops/s 
+The number of iterations 128
+Running with threads: 2
+Time taken : 0.158105
+Performance : 1.26492GFlops/s 
+The number of iterations 256
+Running with threads: 3
+Time taken : 0.108301
+Performance : 1.84663GFlops/s 
+The number of iterations 256
+Running with threads: 4
+Time taken : 0.175863
+Performance : 2.2744GFlops/s 
+The number of iterations 512
+Running with threads: 5
+Time taken : 0.151331
+Performance : 2.64309GFlops/s 
+The number of iterations 512
+Running with threads: 6
+Time taken : 0.134924
+Performance : 2.9645GFlops/s 
+The number of iterations 512
+Running with threads: 7
+Time taken : 0.12395
+Performance : 3.22695GFlops/s 
+The number of iterations 512
+Running with threads: 8
+Time taken : 0.114704
+Performance : 3.48708GFlops/s 
+The number of iterations 512
+Running with threads: 9
+Time taken : 0.108761
+Performance : 3.67762GFlops/s 
+The number of iterations 512
+Running with threads: 10
+Time taken : 0.100308
+Performance : 3.98754GFlops/s 
+The number of iterations 512
+Running with threads: 11
+Time taken : 0.183352
+Performance : 4.363GFlops/s 
+The number of iterations 1024
+Running with threads: 12
+Time taken : 0.167145
+Performance : 4.78605GFlops/s 
+The number of iterations 1024
+Running with threads: 13
+Time taken : 0.150561
+Performance : 5.31321GFlops/s 
+The number of iterations 1024
+Running with threads: 14
+Time taken : 0.139107
+Performance : 5.75072GFlops/s 
+The number of iterations 1024
+Running with threads: 15
+Time taken : 0.130851
+Performance : 6.11355GFlops/s 
+The number of iterations 1024
+Running with threads: 16
+Time taken : 0.121464
+Performance : 6.586GFlops/s 
+The number of iterations 1024
+Running with threads: 17
+Time taken : 0.115945
+Performance : 6.89949GFlops/s 
+The number of iterations 1024
+Running with threads: 18
+Time taken : 0.124413
+Performance : 6.4299GFlops/s 
+The number of iterations 1024
+Running with threads: 19
+Time taken : 0.103966
+Performance : 7.69447GFlops/s 
+The number of iterations 1024
+Running with threads: 20
+Time taken : 0.198014
+Performance : 8.07986GFlops/s 
+The number of iterations 2048
+Running with threads: 21
+Time taken : 0.188959
+Performance : 8.46705GFlops/s 
+The number of iterations 2048
+Running with threads: 22
+Time taken : 0.18074
+Performance : 8.8521GFlops/s 
+The number of iterations 2048
+Running with threads: 23
+Time taken : 0.17292
+Performance : 9.25242GFlops/s 
+The number of iterations 2048
+Running with threads: 24
+Time taken : 0.16623
+Performance : 9.62478GFlops/s 
+The number of iterations 2048
+Running with threads: 25
+Time taken : 0.159549
+Performance : 10.0278GFlops/s 
+The number of iterations 2048
+Running with threads: 26
+Time taken : 0.153551
+Performance : 10.4195GFlops/s 
+The number of iterations 2048
+Running with threads: 27
+Time taken : 0.148166
+Performance : 10.7982GFlops/s 
+The number of iterations 2048
+Running with threads: 28
+Time taken : 0.142809
+Performance : 11.2033GFlops/s 
+The number of iterations 2048
+Running with threads: 29
+Time taken : 0.138278
+Performance : 11.5704GFlops/s 
+The number of iterations 2048
+Running with threads: 30
+Time taken : 0.138423
+Performance : 11.5583GFlops/s 
+The number of iterations 2048
+Running with threads: 31
+Time taken : 0.134037
+Performance : 11.9364GFlops/s 
+The number of iterations 2048
+Running with threads: 32
+Time taken : 0.130514
+Performance : 12.2587GFlops/s 
+The number of iterations 2048
+Running with threads: 33
+Time taken : 0.126724
+Performance : 12.6253GFlops/s 
+The number of iterations 2048
+Running with threads: 34
+Time taken : 0.123115
+Performance : 12.9954GFlops/s 
+The number of iterations 2048
+Running with threads: 35
+Time taken : 0.120146
+Performance : 13.3165GFlops/s 
+The number of iterations 2048
+Running with threads: 36
+Time taken : 0.116445
+Performance : 13.7398GFlops/s 
+The number of iterations 2048
+Running with threads: 37
+Time taken : 0.115725
+Performance : 13.8253GFlops/s 
+The number of iterations 2048
+Running with threads: 38
+Time taken : 0.112266
+Performance : 14.2512GFlops/s 
+The number of iterations 2048
+Running with threads: 39
+Time taken : 0.111566
+Performance : 14.3407GFlops/s 
+The number of iterations 2048
+Running with threads: 40
+Time taken : 0.130186
+Performance : 12.2896GFlops/s 
+The number of iterations 2048
+Running with threads: 41
+Time taken : 0.103247
+Performance : 15.4961GFlops/s 
+The number of iterations 2048
+Running with threads: 42
+Time taken : 0.101668
+Performance : 15.7368GFlops/s 
+The number of iterations 2048
+Running with threads: 43
+Time taken : 0.208862
+Performance : 15.3204GFlops/s 
+The number of iterations 4096
+Running with threads: 44
+Time taken : 0.192991
+Performance : 16.5804GFlops/s 
+The number of iterations 4096
+Running with threads: 45
+Time taken : 0.189022
+Performance : 16.9284GFlops/s 
+The number of iterations 4096
+Running with threads: 46
+Time taken : 0.186436
+Performance : 17.1633GFlops/s 
+The number of iterations 4096
+Running with threads: 47
+Time taken : 0.182101
+Performance : 17.5719GFlops/s 
+The number of iterations 4096
+Running with threads: 48
+Time taken : 0.179165
+Performance : 17.8598GFlops/s 
+The number of iterations 4096
+Running with threads: 49
+Time taken : 0.176583
+Performance : 18.1209GFlops/s 
+The number of iterations 4096
+Running with threads: 50
+Time taken : 0.172243
+Performance : 18.5776GFlops/s 
+The number of iterations 4096
+Running with threads: 51
+Time taken : 0.169313
+Performance : 18.899GFlops/s 
+The number of iterations 4096
+Running with threads: 52
+Time taken : 0.168179
+Performance : 19.0264GFlops/s 
+The number of iterations 4096
+Running with threads: 53
+Time taken : 0.16405
+Performance : 19.5054GFlops/s 
+The number of iterations 4096
+Running with threads: 54
+Time taken : 0.160355
+Performance : 19.9548GFlops/s 
+The number of iterations 4096
+Running with threads: 55
+Time taken : 0.162101
+Performance : 19.7399GFlops/s 
+The number of iterations 4096
+Running with threads: 56
+Time taken : 0.158035
+Performance : 20.2478GFlops/s 
+The number of iterations 4096
+Running with threads: 57
+Time taken : 0.16919
+Performance : 18.9128GFlops/s 
+The number of iterations 4096
+Running with threads: 58
+Time taken : 0.172956
+Performance : 18.5009GFlops/s 
+The number of iterations 4096
+Running with threads: 59
+Time taken : 0.165762
+Performance : 19.3038GFlops/s 
+The number of iterations 4096
+Running with threads: 60
+Time taken : 0.151574
+Performance : 21.1108GFlops/s 
+The number of iterations 4096
+Running with threads: 61
+Time taken : 0.150143
+Performance : 21.312GFlops/s 
+The number of iterations 4096
+Running with threads: 62
+Time taken : 0.148501
+Performance : 21.5476GFlops/s 
+The number of iterations 4096
+Running with threads: 63
+Time taken : 0.147583
+Performance : 21.6817GFlops/s 
+The number of iterations 4096
+Running with threads: 64
+Time taken : 0.144556
+Performance : 22.1358GFlops/s 
+The number of iterations 4096
+Running with threads: 65
+Time taken : 0.141748
+Performance : 22.5742GFlops/s 
+The number of iterations 4096
+Running with threads: 66
+Time taken : 0.152865
+Performance : 20.9326GFlops/s 
+The number of iterations 4096
+Running with threads: 67
+Time taken : 0.145711
+Performance : 21.9603GFlops/s 
+The number of iterations 4096
+Running with threads: 68
+Time taken : 0.154388
+Performance : 20.726GFlops/s 
+The number of iterations 4096
+Running with threads: 69
+Time taken : 0.145771
+Performance : 21.9512GFlops/s 
+The number of iterations 4096
+Running with threads: 70
+Time taken : 0.141345
+Performance : 22.6386GFlops/s 
+The number of iterations 4096
+Running with threads: 71
+Time taken : 0.131245
+Performance : 24.3807GFlops/s 
+The number of iterations 4096
+Running with threads: 72
+Time taken : 0.146394
+Performance : 21.8579GFlops/s 
+The number of iterations 4096
+---------------------------------------------------------------
+Matrix : nv1
+Running with threads: 1
+Time taken : 0.126239
+Performance : 0.62084GFlops/s 
+The number of iterations 16
+Running with threads: 2
+Time taken : 0.135513
+Performance : 1.15671GFlops/s 
+The number of iterations 32
+Running with threads: 3
+Time taken : 0.18989
+Performance : 1.65094GFlops/s 
+The number of iterations 64
+Running with threads: 4
+Time taken : 0.150074
+Performance : 2.08895GFlops/s 
+The number of iterations 64
+Running with threads: 5
+Time taken : 0.118145
+Performance : 2.6535GFlops/s 
+The number of iterations 64
+Running with threads: 6
+Time taken : 0.104164
+Performance : 3.00965GFlops/s 
+The number of iterations 64
+Running with threads: 7
+Time taken : 0.179771
+Performance : 3.48773GFlops/s 
+The number of iterations 128
+Running with threads: 8
+Time taken : 0.17256
+Performance : 3.63349GFlops/s 
+The number of iterations 128
+Running with threads: 9
+Time taken : 0.160739
+Performance : 3.90069GFlops/s 
+The number of iterations 128
+Running with threads: 10
+Time taken : 0.147809
+Performance : 4.24192GFlops/s 
+The number of iterations 128
+Running with threads: 11
+Time taken : 0.133747
+Performance : 4.68791GFlops/s 
+The number of iterations 128
+Running with threads: 12
+Time taken : 0.122438
+Performance : 5.12092GFlops/s 
+The number of iterations 128
+Running with threads: 13
+Time taken : 0.11021
+Performance : 5.68908GFlops/s 
+The number of iterations 128
+Running with threads: 14
+Time taken : 0.106009
+Performance : 5.91454GFlops/s 
+The number of iterations 128
+Running with threads: 15
+Time taken : 0.100404
+Performance : 6.24468GFlops/s 
+The number of iterations 128
+Running with threads: 16
+Time taken : 0.184856
+Performance : 6.78359GFlops/s 
+The number of iterations 256
+Running with threads: 17
+Time taken : 0.16927
+Performance : 7.40819GFlops/s 
+The number of iterations 256
+Running with threads: 18
+Time taken : 0.161031
+Performance : 7.78724GFlops/s 
+The number of iterations 256
+Running with threads: 19
+Time taken : 0.151329
+Performance : 8.2865GFlops/s 
+The number of iterations 256
+Running with threads: 20
+Time taken : 0.144066
+Performance : 8.70426GFlops/s 
+The number of iterations 256
+Running with threads: 21
+Time taken : 0.138223
+Performance : 9.07223GFlops/s 
+The number of iterations 256
+Running with threads: 22
+Time taken : 0.131542
+Performance : 9.53298GFlops/s 
+The number of iterations 256
+Running with threads: 23
+Time taken : 0.12566
+Performance : 9.9792GFlops/s 
+The number of iterations 256
+Running with threads: 24
+Time taken : 0.121204
+Performance : 10.3461GFlops/s 
+The number of iterations 256
+Running with threads: 25
+Time taken : 0.114953
+Performance : 10.9087GFlops/s 
+The number of iterations 256
+Running with threads: 26
+Time taken : 0.110693
+Performance : 11.3285GFlops/s 
+The number of iterations 256
+Running with threads: 27
+Time taken : 0.108688
+Performance : 11.5375GFlops/s 
+The number of iterations 256
+Running with threads: 28
+Time taken : 0.104035
+Performance : 12.0536GFlops/s 
+The number of iterations 256
+Running with threads: 29
+Time taken : 0.102915
+Performance : 12.1847GFlops/s 
+The number of iterations 256
+Running with threads: 30
+Time taken : 0.10302
+Performance : 12.1723GFlops/s 
+The number of iterations 256
+Running with threads: 31
+Time taken : 0.192864
+Performance : 13.0039GFlops/s 
+The number of iterations 512
+Running with threads: 32
+Time taken : 0.187804
+Performance : 13.3542GFlops/s 
+The number of iterations 512
+Running with threads: 33
+Time taken : 0.178755
+Performance : 14.0302GFlops/s 
+The number of iterations 512
+Running with threads: 34
+Time taken : 0.174989
+Performance : 14.3322GFlops/s 
+The number of iterations 512
+Running with threads: 35
+Time taken : 0.176289
+Performance : 14.2265GFlops/s 
+The number of iterations 512
+Running with threads: 36
+Time taken : 0.169012
+Performance : 14.8391GFlops/s 
+The number of iterations 512
+Running with threads: 37
+Time taken : 0.155819
+Performance : 16.0955GFlops/s 
+The number of iterations 512
+Running with threads: 38
+Time taken : 0.154241
+Performance : 16.2601GFlops/s 
+The number of iterations 512
+Running with threads: 39
+Time taken : 0.1524
+Performance : 16.4566GFlops/s 
+The number of iterations 512
+Running with threads: 40
+Time taken : 0.144247
+Performance : 17.3866GFlops/s 
+The number of iterations 512
+Running with threads: 41
+Time taken : 0.143706
+Performance : 17.4521GFlops/s 
+The number of iterations 512
+Running with threads: 42
+Time taken : 0.141905
+Performance : 17.6737GFlops/s 
+The number of iterations 512
+Running with threads: 43
+Time taken : 0.14188
+Performance : 17.6768GFlops/s 
+The number of iterations 512
+Running with threads: 44
+Time taken : 0.142314
+Performance : 17.6228GFlops/s 
+The number of iterations 512
+Running with threads: 45
+Time taken : 0.138158
+Performance : 18.153GFlops/s 
+The number of iterations 512
+Running with threads: 46
+Time taken : 0.130657
+Performance : 19.1952GFlops/s 
+The number of iterations 512
+Running with threads: 47
+Time taken : 0.127623
+Performance : 19.6515GFlops/s 
+The number of iterations 512
+Running with threads: 48
+Time taken : 0.125912
+Performance : 19.9185GFlops/s 
+The number of iterations 512
+Running with threads: 49
+Time taken : 0.121371
+Performance : 20.6637GFlops/s 
+The number of iterations 512
+Running with threads: 50
+Time taken : 0.125226
+Performance : 20.0276GFlops/s 
+The number of iterations 512
+Running with threads: 51
+Time taken : 0.122932
+Performance : 20.4012GFlops/s 
+The number of iterations 512
+Running with threads: 52
+Time taken : 0.118631
+Performance : 21.141GFlops/s 
+The number of iterations 512
+Running with threads: 53
+Time taken : 0.115313
+Performance : 21.7493GFlops/s 
+The number of iterations 512
+Running with threads: 54
+Time taken : 0.116366
+Performance : 21.5524GFlops/s 
+The number of iterations 512
+Running with threads: 55
+Time taken : 0.112683
+Performance : 22.2569GFlops/s 
+The number of iterations 512
+Running with threads: 56
+Time taken : 0.11368
+Performance : 22.0618GFlops/s 
+The number of iterations 512
+Running with threads: 57
+Time taken : 0.109074
+Performance : 22.9934GFlops/s 
+The number of iterations 512
+Running with threads: 58
+Time taken : 0.110292
+Performance : 22.7395GFlops/s 
+The number of iterations 512
+Running with threads: 59
+Time taken : 0.111942
+Performance : 22.4043GFlops/s 
+The number of iterations 512
+Running with threads: 60
+Time taken : 0.107089
+Performance : 23.4195GFlops/s 
+The number of iterations 512
+Running with threads: 61
+Time taken : 0.101963
+Performance : 24.5969GFlops/s 
+The number of iterations 512
+Running with threads: 62
+Time taken : 0.100667
+Performance : 24.9135GFlops/s 
+The number of iterations 512
+Running with threads: 63
+Time taken : 0.19116
+Performance : 26.2396GFlops/s 
+The number of iterations 1024
+Running with threads: 64
+Time taken : 0.193102
+Performance : 25.9757GFlops/s 
+The number of iterations 1024
+Running with threads: 65
+Time taken : 0.195218
+Performance : 25.6941GFlops/s 
+The number of iterations 1024
+Running with threads: 66
+Time taken : 0.182238
+Performance : 27.5242GFlops/s 
+The number of iterations 1024
+Running with threads: 67
+Time taken : 0.185755
+Performance : 27.003GFlops/s 
+The number of iterations 1024
+Running with threads: 68
+Time taken : 0.185226
+Performance : 27.0801GFlops/s 
+The number of iterations 1024
+Running with threads: 69
+Time taken : 0.177097
+Performance : 28.3231GFlops/s 
+The number of iterations 1024
+Running with threads: 70
+Time taken : 0.181874
+Performance : 27.5793GFlops/s 
+The number of iterations 1024
+Running with threads: 71
+Time taken : 0.183444
+Performance : 27.3431GFlops/s 
+The number of iterations 1024
+Running with threads: 72
+Time taken : 0.187281
+Performance : 26.783GFlops/s 
+The number of iterations 1024
+---------------------------------------------------------------
+Matrix : kkt_power
+Running with threads: 1
+Time taken : 0.366032
+Performance : 0.638749GFlops/s 
+The number of iterations 8
+Running with threads: 2
+Time taken : 0.239147
+Performance : 0.977652GFlops/s 
+The number of iterations 8
+Running with threads: 3
+Time taken : 0.163791
+Performance : 1.42745GFlops/s 
+The number of iterations 8
+Running with threads: 4
+Time taken : 0.12503
+Performance : 1.86997GFlops/s 
+The number of iterations 8
+Running with threads: 5
+Time taken : 0.100377
+Performance : 2.32924GFlops/s 
+The number of iterations 8
+Running with threads: 6
+Time taken : 0.173708
+Performance : 2.6919GFlops/s 
+The number of iterations 16
+Running with threads: 7
+Time taken : 0.153947
+Performance : 3.03745GFlops/s 
+The number of iterations 16
+Running with threads: 8
+Time taken : 0.142462
+Performance : 3.28231GFlops/s 
+The number of iterations 16
+Running with threads: 9
+Time taken : 0.129634
+Performance : 3.60713GFlops/s 
+The number of iterations 16
+Running with threads: 10
+Time taken : 0.122078
+Performance : 3.83039GFlops/s 
+The number of iterations 16
+Running with threads: 11
+Time taken : 0.115847
+Performance : 4.03642GFlops/s 
+The number of iterations 16
+Running with threads: 12
+Time taken : 0.108585
+Performance : 4.30636GFlops/s 
+The number of iterations 16
+Running with threads: 13
+Time taken : 0.103256
+Performance : 4.5286GFlops/s 
+The number of iterations 16
+Running with threads: 14
+Time taken : 0.188586
+Performance : 4.95905GFlops/s 
+The number of iterations 32
+Running with threads: 15
+Time taken : 0.186438
+Performance : 5.01621GFlops/s 
+The number of iterations 32
+Running with threads: 16
+Time taken : 0.183209
+Performance : 5.10462GFlops/s 
+The number of iterations 32
+Running with threads: 17
+Time taken : 0.178
+Performance : 5.25399GFlops/s 
+The number of iterations 32
+Running with threads: 18
+Time taken : 0.172411
+Performance : 5.42431GFlops/s 
+The number of iterations 32
+Running with threads: 19
+Time taken : 0.164231
+Performance : 5.69448GFlops/s 
+The number of iterations 32
+Running with threads: 20
+Time taken : 0.155142
+Performance : 6.0281GFlops/s 
+The number of iterations 32
+Running with threads: 21
+Time taken : 0.146774
+Performance : 6.37176GFlops/s 
+The number of iterations 32
+Running with threads: 22
+Time taken : 0.145542
+Performance : 6.42571GFlops/s 
+The number of iterations 32
+Running with threads: 23
+Time taken : 0.144005
+Performance : 6.49429GFlops/s 
+The number of iterations 32
+Running with threads: 24
+Time taken : 0.139268
+Performance : 6.71516GFlops/s 
+The number of iterations 32
+Running with threads: 25
+Time taken : 0.13271
+Performance : 7.04705GFlops/s 
+The number of iterations 32
+Running with threads: 26
+Time taken : 0.129687
+Performance : 7.21127GFlops/s 
+The number of iterations 32
+Running with threads: 27
+Time taken : 0.133552
+Performance : 7.0026GFlops/s 
+The number of iterations 32
+Running with threads: 28
+Time taken : 0.130243
+Performance : 7.18048GFlops/s 
+The number of iterations 32
+Running with threads: 29
+Time taken : 0.127745
+Performance : 7.32093GFlops/s 
+The number of iterations 32
+Running with threads: 30
+Time taken : 0.122288
+Performance : 7.64762GFlops/s 
+The number of iterations 32
+Running with threads: 31
+Time taken : 0.118367
+Performance : 7.90092GFlops/s 
+The number of iterations 32
+Running with threads: 32
+Time taken : 0.116603
+Performance : 8.02044GFlops/s 
+The number of iterations 32
+Running with threads: 33
+Time taken : 0.116551
+Performance : 8.02403GFlops/s 
+The number of iterations 32
+Running with threads: 34
+Time taken : 0.116269
+Performance : 8.04352GFlops/s 
+The number of iterations 32
+Running with threads: 35
+Time taken : 0.115629
+Performance : 8.08806GFlops/s 
+The number of iterations 32
+Running with threads: 36
+Time taken : 0.114574
+Performance : 8.16249GFlops/s 
+The number of iterations 32
+Running with threads: 37
+Time taken : 0.115087
+Performance : 8.12611GFlops/s 
+The number of iterations 32
+Running with threads: 38
+Time taken : 0.109518
+Performance : 8.53933GFlops/s 
+The number of iterations 32
+Running with threads: 39
+Time taken : 0.110362
+Performance : 8.47403GFlops/s 
+The number of iterations 32
+Running with threads: 40
+Time taken : 0.105217
+Performance : 8.88841GFlops/s 
+The number of iterations 32
+Running with threads: 41
+Time taken : 0.103221
+Performance : 9.06023GFlops/s 
+The number of iterations 32
+Running with threads: 42
+Time taken : 0.102408
+Performance : 9.13219GFlops/s 
+The number of iterations 32
+Running with threads: 43
+Time taken : 0.102401
+Performance : 9.13286GFlops/s 
+The number of iterations 32
+Running with threads: 44
+Time taken : 0.10057
+Performance : 9.29909GFlops/s 
+The number of iterations 32
+Running with threads: 45
+Time taken : 0.100615
+Performance : 9.29494GFlops/s 
+The number of iterations 32
+Running with threads: 46
+Time taken : 0.103206
+Performance : 9.0616GFlops/s 
+The number of iterations 32
+Running with threads: 47
+Time taken : 0.103138
+Performance : 9.06754GFlops/s 
+The number of iterations 32
+Running with threads: 48
+Time taken : 0.101689
+Performance : 9.19678GFlops/s 
+The number of iterations 32
+Running with threads: 49
+Time taken : 0.102732
+Performance : 9.10341GFlops/s 
+The number of iterations 32
+Running with threads: 50
+Time taken : 0.100546
+Performance : 9.30129GFlops/s 
+The number of iterations 32
+Running with threads: 51
+Time taken : 0.10084
+Performance : 9.27422GFlops/s 
+The number of iterations 32
+Running with threads: 52
+Time taken : 0.100083
+Performance : 9.34431GFlops/s 
+The number of iterations 32
+Running with threads: 53
+Time taken : 0.196232
+Performance : 9.53169GFlops/s 
+The number of iterations 64
+Running with threads: 54
+Time taken : 0.195101
+Performance : 9.58692GFlops/s 
+The number of iterations 64
+Running with threads: 55
+Time taken : 0.192531
+Performance : 9.71489GFlops/s 
+The number of iterations 64
+Running with threads: 56
+Time taken : 0.192288
+Performance : 9.72718GFlops/s 
+The number of iterations 64
+Running with threads: 57
+Time taken : 0.189527
+Performance : 9.86888GFlops/s 
+The number of iterations 64
+Running with threads: 58
+Time taken : 0.187841
+Performance : 9.95745GFlops/s 
+The number of iterations 64
+Running with threads: 59
+Time taken : 0.184205
+Performance : 10.154GFlops/s 
+The number of iterations 64
+Running with threads: 60
+Time taken : 0.180018
+Performance : 10.3902GFlops/s 
+The number of iterations 64
+Running with threads: 61
+Time taken : 0.178864
+Performance : 10.4572GFlops/s 
+The number of iterations 64
+Running with threads: 62
+Time taken : 0.177535
+Performance : 10.5355GFlops/s 
+The number of iterations 64
+Running with threads: 63
+Time taken : 0.176886
+Performance : 10.5741GFlops/s 
+The number of iterations 64
+Running with threads: 64
+Time taken : 0.177814
+Performance : 10.519GFlops/s 
+The number of iterations 64
+Running with threads: 65
+Time taken : 0.180084
+Performance : 10.3864GFlops/s 
+The number of iterations 64
+Running with threads: 66
+Time taken : 0.178512
+Performance : 10.4778GFlops/s 
+The number of iterations 64
+Running with threads: 67
+Time taken : 0.179226
+Performance : 10.4361GFlops/s 
+The number of iterations 64
+Running with threads: 68
+Time taken : 0.177798
+Performance : 10.5199GFlops/s 
+The number of iterations 64
+Running with threads: 69
+Time taken : 0.175632
+Performance : 10.6497GFlops/s 
+The number of iterations 64
+Running with threads: 70
+Time taken : 0.190925
+Performance : 9.79662GFlops/s 
+The number of iterations 64
+Running with threads: 71
+Time taken : 0.173274
+Performance : 10.7946GFlops/s 
+The number of iterations 64
+Running with threads: 72
+Time taken : 0.176553
+Performance : 10.5941GFlops/s 
+The number of iterations 64
+---------------------------------------------------------------
+Matrix : HPCG-128-128-128
+Running with threads: 1
+Time taken : 1.49761
+Performance : 0.595542GFlops/s 
+The number of iterations 8
+Running with threads: 2
+Time taken : 0.734119
+Performance : 1.21491GFlops/s 
+The number of iterations 8
+Running with threads: 3
+Time taken : 0.49295
+Performance : 1.80929GFlops/s 
+The number of iterations 8
+Running with threads: 4
+Time taken : 0.380094
+Performance : 2.34649GFlops/s 
+The number of iterations 8
+Running with threads: 5
+Time taken : 0.294815
+Performance : 3.02525GFlops/s 
+The number of iterations 8
+Running with threads: 6
+Time taken : 0.245471
+Performance : 3.63338GFlops/s 
+The number of iterations 8
+Running with threads: 7
+Time taken : 0.215008
+Performance : 4.14816GFlops/s 
+The number of iterations 8
+Running with threads: 8
+Time taken : 0.184219
+Performance : 4.84144GFlops/s 
+The number of iterations 8
+Running with threads: 9
+Time taken : 0.164015
+Performance : 5.43782GFlops/s 
+The number of iterations 8
+Running with threads: 10
+Time taken : 0.153204
+Performance : 5.82157GFlops/s 
+The number of iterations 8
+Running with threads: 11
+Time taken : 0.134274
+Performance : 6.64227GFlops/s 
+The number of iterations 8
+Running with threads: 12
+Time taken : 0.126427
+Performance : 7.05456GFlops/s 
+The number of iterations 8
+Running with threads: 13
+Time taken : 0.116835
+Performance : 7.63371GFlops/s 
+The number of iterations 8
+Running with threads: 14
+Time taken : 0.106456
+Performance : 8.37803GFlops/s 
+The number of iterations 8
+Running with threads: 15
+Time taken : 0.101575
+Performance : 8.78056GFlops/s 
+The number of iterations 8
+Running with threads: 16
+Time taken : 0.191246
+Performance : 9.32712GFlops/s 
+The number of iterations 16
+Running with threads: 17
+Time taken : 0.176595
+Performance : 10.1009GFlops/s 
+The number of iterations 16
+Running with threads: 18
+Time taken : 0.172118
+Performance : 10.3637GFlops/s 
+The number of iterations 16
+Running with threads: 19
+Time taken : 0.160129
+Performance : 11.1396GFlops/s 
+The number of iterations 16
+Running with threads: 20
+Time taken : 0.151933
+Performance : 11.7405GFlops/s 
+The number of iterations 16
+Running with threads: 21
+Time taken : 0.147295
+Performance : 12.1102GFlops/s 
+The number of iterations 16
+Running with threads: 22
+Time taken : 0.138017
+Performance : 12.9243GFlops/s 
+The number of iterations 16
+Running with threads: 23
+Time taken : 0.13192
+Performance : 13.5216GFlops/s 
+The number of iterations 16
+Running with threads: 24
+Time taken : 0.128763
+Performance : 13.8531GFlops/s 
+The number of iterations 16
+Running with threads: 25
+Time taken : 0.121344
+Performance : 14.7001GFlops/s 
+The number of iterations 16
+Running with threads: 26
+Time taken : 0.117002
+Performance : 15.2457GFlops/s 
+The number of iterations 16
+Running with threads: 27
+Time taken : 0.114556
+Performance : 15.5713GFlops/s 
+The number of iterations 16
+Running with threads: 28
+Time taken : 0.108482
+Performance : 16.4431GFlops/s 
+The number of iterations 16
+Running with threads: 29
+Time taken : 0.104552
+Performance : 17.0612GFlops/s 
+The number of iterations 16
+Running with threads: 30
+Time taken : 0.103246
+Performance : 17.277GFlops/s 
+The number of iterations 16
+Running with threads: 31
+Time taken : 0.195447
+Performance : 18.2533GFlops/s 
+The number of iterations 32
+Running with threads: 32
+Time taken : 0.189553
+Performance : 18.8208GFlops/s 
+The number of iterations 32
+Running with threads: 33
+Time taken : 0.187872
+Performance : 18.9893GFlops/s 
+The number of iterations 32
+Running with threads: 34
+Time taken : 0.179194
+Performance : 19.9089GFlops/s 
+The number of iterations 32
+Running with threads: 35
+Time taken : 0.174157
+Performance : 20.4847GFlops/s 
+The number of iterations 32
+Running with threads: 36
+Time taken : 0.173739
+Performance : 20.534GFlops/s 
+The number of iterations 32
+Running with threads: 37
+Time taken : 0.164633
+Performance : 21.6697GFlops/s 
+The number of iterations 32
+Running with threads: 38
+Time taken : 0.161373
+Performance : 22.1075GFlops/s 
+The number of iterations 32
+Running with threads: 39
+Time taken : 0.159028
+Performance : 22.4335GFlops/s 
+The number of iterations 32
+Running with threads: 40
+Time taken : 0.152976
+Performance : 23.3209GFlops/s 
+The number of iterations 32
+Running with threads: 41
+Time taken : 0.151635
+Performance : 23.5272GFlops/s 
+The number of iterations 32
+Running with threads: 42
+Time taken : 0.147828
+Performance : 24.1331GFlops/s 
+The number of iterations 32
+Running with threads: 43
+Time taken : 0.141577
+Performance : 25.1987GFlops/s 
+The number of iterations 32
+Running with threads: 44
+Time taken : 0.138578
+Performance : 25.744GFlops/s 
+The number of iterations 32
+Running with threads: 45
+Time taken : 0.138824
+Performance : 25.6984GFlops/s 
+The number of iterations 32
+Running with threads: 46
+Time taken : 0.132558
+Performance : 26.9132GFlops/s 
+The number of iterations 32
+Running with threads: 47
+Time taken : 0.132412
+Performance : 26.9428GFlops/s 
+The number of iterations 32
+Running with threads: 48
+Time taken : 0.127398
+Performance : 28.0032GFlops/s 
+The number of iterations 32
+Running with threads: 49
+Time taken : 0.12908
+Performance : 27.6384GFlops/s 
+The number of iterations 32
+Running with threads: 50
+Time taken : 0.14228
+Performance : 25.0741GFlops/s 
+The number of iterations 32
+Running with threads: 51
+Time taken : 0.119613
+Performance : 29.8258GFlops/s 
+The number of iterations 32
+Running with threads: 52
+Time taken : 0.117433
+Performance : 30.3795GFlops/s 
+The number of iterations 32
+Running with threads: 53
+Time taken : 0.117915
+Performance : 30.2552GFlops/s 
+The number of iterations 32
+Running with threads: 54
+Time taken : 0.130203
+Performance : 27.3999GFlops/s 
+The number of iterations 32
+Running with threads: 55
+Time taken : 0.11111
+Performance : 32.1083GFlops/s 
+The number of iterations 32
+Running with threads: 56
+Time taken : 0.111226
+Performance : 32.0748GFlops/s 
+The number of iterations 32
+Running with threads: 57
+Time taken : 0.107584
+Performance : 33.1605GFlops/s 
+The number of iterations 32
+Running with threads: 58
+Time taken : 0.105796
+Performance : 33.7211GFlops/s 
+The number of iterations 32
+Running with threads: 59
+Time taken : 0.105674
+Performance : 33.7599GFlops/s 
+The number of iterations 32
+Running with threads: 60
+Time taken : 0.102175
+Performance : 34.916GFlops/s 
+The number of iterations 32
+Running with threads: 61
+Time taken : 0.200257
+Performance : 35.6297GFlops/s 
+The number of iterations 64
+Running with threads: 62
+Time taken : 0.100122
+Performance : 35.6322GFlops/s 
+The number of iterations 32
+Running with threads: 63
+Time taken : 0.19933
+Performance : 35.7955GFlops/s 
+The number of iterations 64
+Running with threads: 64
+Time taken : 0.192541
+Performance : 37.0575GFlops/s 
+The number of iterations 64
+Running with threads: 65
+Time taken : 0.191519
+Performance : 37.2553GFlops/s 
+The number of iterations 64
+Running with threads: 66
+Time taken : 0.184539
+Performance : 38.6644GFlops/s 
+The number of iterations 64
+Running with threads: 67
+Time taken : 0.1821
+Performance : 39.1824GFlops/s 
+The number of iterations 64
+Running with threads: 68
+Time taken : 0.183224
+Performance : 38.9419GFlops/s 
+The number of iterations 64
+Running with threads: 69
+Time taken : 0.17692
+Performance : 40.3295GFlops/s 
+The number of iterations 64
+Running with threads: 70
+Time taken : 0.174303
+Performance : 40.935GFlops/s 
+The number of iterations 64
+Running with threads: 71
+Time taken : 0.174933
+Performance : 40.7876GFlops/s 
+The number of iterations 64
+Running with threads: 72
+Time taken : 0.170893
+Performance : 41.7517GFlops/s 
+The number of iterations 64

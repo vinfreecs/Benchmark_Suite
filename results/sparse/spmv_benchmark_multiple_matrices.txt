@@ -1,0 +1,299 @@
+Starting Benchmark...
+SPMV BENCHMARK
+Benchmarking across 1 NUMA Domain 
+---------------------------------------------------------------
+Matrix : garon2
+Running with threads: 1
+Time taken : 0.156818
+Performance : 0.637654GFlops/s 
+The number of iterations 128
+Running with threads: 2
+Time taken : 0.158359
+Performance : 1.2629GFlops/s 
+The number of iterations 256
+Running with threads: 3
+Time taken : 0.105399
+Performance : 1.89747GFlops/s 
+The number of iterations 256
+Running with threads: 4
+Time taken : 0.170968
+Performance : 2.33951GFlops/s 
+The number of iterations 512
+Running with threads: 5
+Time taken : 0.146802
+Performance : 2.72464GFlops/s 
+The number of iterations 512
+Running with threads: 6
+Time taken : 0.130855
+Performance : 3.05669GFlops/s 
+The number of iterations 512
+Running with threads: 7
+Time taken : 0.119669
+Performance : 3.34239GFlops/s 
+The number of iterations 512
+Running with threads: 8
+Time taken : 0.111079
+Performance : 3.60088GFlops/s 
+The number of iterations 512
+Running with threads: 9
+Time taken : 0.104801
+Performance : 3.81658GFlops/s 
+The number of iterations 512
+Running with threads: 10
+Time taken : 0.19371
+Performance : 4.1297GFlops/s 
+The number of iterations 1024
+Running with threads: 11
+Time taken : 0.177235
+Performance : 4.51358GFlops/s 
+The number of iterations 1024
+Running with threads: 12
+Time taken : 0.161073
+Performance : 4.96645GFlops/s 
+The number of iterations 1024
+Running with threads: 13
+Time taken : 0.15075
+Performance : 5.30657GFlops/s 
+The number of iterations 1024
+Running with threads: 14
+Time taken : 0.143111
+Performance : 5.58981GFlops/s 
+The number of iterations 1024
+Running with threads: 15
+Time taken : 0.135099
+Performance : 5.9213GFlops/s 
+The number of iterations 1024
+Running with threads: 16
+Time taken : 0.125801
+Performance : 6.35894GFlops/s 
+The number of iterations 1024
+Running with threads: 17
+Time taken : 0.119405
+Performance : 6.69958GFlops/s 
+The number of iterations 1024
+Running with threads: 18
+Time taken : 0.112258
+Performance : 7.1261GFlops/s 
+The number of iterations 1024
+---------------------------------------------------------------
+Matrix : nv1
+Running with threads: 1
+Time taken : 0.129547
+Performance : 0.604986GFlops/s 
+The number of iterations 16
+Running with threads: 2
+Time taken : 0.138911
+Performance : 1.12841GFlops/s 
+The number of iterations 32
+Running with threads: 3
+Time taken : 0.194857
+Performance : 1.60886GFlops/s 
+The number of iterations 64
+Running with threads: 4
+Time taken : 0.15034
+Performance : 2.08525GFlops/s 
+The number of iterations 64
+Running with threads: 5
+Time taken : 0.118684
+Performance : 2.64145GFlops/s 
+The number of iterations 64
+Running with threads: 6
+Time taken : 0.104017
+Performance : 3.0139GFlops/s 
+The number of iterations 64
+Running with threads: 7
+Time taken : 0.179674
+Performance : 3.48961GFlops/s 
+The number of iterations 128
+Running with threads: 8
+Time taken : 0.172959
+Performance : 3.6251GFlops/s 
+The number of iterations 128
+Running with threads: 9
+Time taken : 0.160529
+Performance : 3.9058GFlops/s 
+The number of iterations 128
+Running with threads: 10
+Time taken : 0.143696
+Performance : 4.36334GFlops/s 
+The number of iterations 128
+Running with threads: 11
+Time taken : 0.130263
+Performance : 4.81329GFlops/s 
+The number of iterations 128
+Running with threads: 12
+Time taken : 0.119395
+Performance : 5.25143GFlops/s 
+The number of iterations 128
+Running with threads: 13
+Time taken : 0.110234
+Performance : 5.68785GFlops/s 
+The number of iterations 128
+Running with threads: 14
+Time taken : 0.10326
+Performance : 6.07199GFlops/s 
+The number of iterations 128
+Running with threads: 15
+Time taken : 0.195082
+Performance : 6.42799GFlops/s 
+The number of iterations 256
+Running with threads: 16
+Time taken : 0.179667
+Performance : 6.9795GFlops/s 
+The number of iterations 256
+Running with threads: 17
+Time taken : 0.173853
+Performance : 7.21292GFlops/s 
+The number of iterations 256
+Running with threads: 18
+Time taken : 0.165443
+Performance : 7.57956GFlops/s 
+The number of iterations 256
+---------------------------------------------------------------
+Matrix : kkt_power
+Running with threads: 1
+Time taken : 0.361612
+Performance : 0.646557GFlops/s 
+The number of iterations 8
+Running with threads: 2
+Time taken : 0.240358
+Performance : 0.972726GFlops/s 
+The number of iterations 8
+Running with threads: 3
+Time taken : 0.162312
+Performance : 1.44046GFlops/s 
+The number of iterations 8
+Running with threads: 4
+Time taken : 0.125698
+Performance : 1.86004GFlops/s 
+The number of iterations 8
+Running with threads: 5
+Time taken : 0.101123
+Performance : 2.31206GFlops/s 
+The number of iterations 8
+Running with threads: 6
+Time taken : 0.173574
+Performance : 2.69399GFlops/s 
+The number of iterations 16
+Running with threads: 7
+Time taken : 0.153931
+Performance : 3.03776GFlops/s 
+The number of iterations 16
+Running with threads: 8
+Time taken : 0.140176
+Performance : 3.33585GFlops/s 
+The number of iterations 16
+Running with threads: 9
+Time taken : 0.129535
+Performance : 3.60986GFlops/s 
+The number of iterations 16
+Running with threads: 10
+Time taken : 0.122079
+Performance : 3.83033GFlops/s 
+The number of iterations 16
+Running with threads: 11
+Time taken : 0.114462
+Performance : 4.08523GFlops/s 
+The number of iterations 16
+Running with threads: 12
+Time taken : 0.109445
+Performance : 4.27252GFlops/s 
+The number of iterations 16
+Running with threads: 13
+Time taken : 0.101287
+Performance : 4.61662GFlops/s 
+The number of iterations 16
+Running with threads: 14
+Time taken : 0.191694
+Performance : 4.87865GFlops/s 
+The number of iterations 32
+Running with threads: 15
+Time taken : 0.189503
+Performance : 4.93506GFlops/s 
+The number of iterations 32
+Running with threads: 16
+Time taken : 0.181014
+Performance : 5.16651GFlops/s 
+The number of iterations 32
+Running with threads: 17
+Time taken : 0.178526
+Performance : 5.23851GFlops/s 
+The number of iterations 32
+Running with threads: 18
+Time taken : 0.167919
+Performance : 5.5694GFlops/s 
+The number of iterations 32
+---------------------------------------------------------------
+Matrix : HPCG-128-128-128
+Running with threads: 1
+Time taken : 1.46719
+Performance : 0.607887GFlops/s 
+The number of iterations 8
+Running with threads: 2
+Time taken : 0.734494
+Performance : 1.21429GFlops/s 
+The number of iterations 8
+Running with threads: 3
+Time taken : 0.501325
+Performance : 1.77906GFlops/s 
+The number of iterations 8
+Running with threads: 4
+Time taken : 0.3705
+Performance : 2.40726GFlops/s 
+The number of iterations 8
+Running with threads: 5
+Time taken : 0.294845
+Performance : 3.02494GFlops/s 
+The number of iterations 8
+Running with threads: 6
+Time taken : 0.250945
+Performance : 3.55411GFlops/s 
+The number of iterations 8
+Running with threads: 7
+Time taken : 0.210303
+Performance : 4.24096GFlops/s 
+The number of iterations 8
+Running with threads: 8
+Time taken : 0.184009
+Performance : 4.84698GFlops/s 
+The number of iterations 8
+Running with threads: 9
+Time taken : 0.167449
+Performance : 5.32632GFlops/s 
+The number of iterations 8
+Running with threads: 10
+Time taken : 0.147475
+Performance : 6.04773GFlops/s 
+The number of iterations 8
+Running with threads: 11
+Time taken : 0.134187
+Performance : 6.64658GFlops/s 
+The number of iterations 8
+Running with threads: 12
+Time taken : 0.126127
+Performance : 7.07137GFlops/s 
+The number of iterations 8
+Running with threads: 13
+Time taken : 0.114029
+Performance : 7.82157GFlops/s 
+The number of iterations 8
+Running with threads: 14
+Time taken : 0.106221
+Performance : 8.39654GFlops/s 
+The number of iterations 8
+Running with threads: 15
+Time taken : 0.101641
+Performance : 8.77489GFlops/s 
+The number of iterations 8
+Running with threads: 16
+Time taken : 0.187523
+Performance : 9.51229GFlops/s 
+The number of iterations 16
+Running with threads: 17
+Time taken : 0.177396
+Performance : 10.0553GFlops/s 
+The number of iterations 16
+Running with threads: 18
+Time taken : 0.171674
+Performance : 10.3905GFlops/s 
+The number of iterations 16
