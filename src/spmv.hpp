@@ -147,14 +147,16 @@ void read_matrix(const char *file, csr &sm) {
   sm.col_idx.resize(nnz_);
   sm.values.resize(nnz_);
   sm.row_start.resize(rows_ + 1);
-  // FIX this has to be from zero as we are incrementing the values in the loop
-  // below and as spm size increases the vec goes into heap from stack
-  std::fill(sm.row_start.begin(), sm.row_start.end(), 0);
-// maybe pragma to spedd and first touch numa
 #pragma omp parallel for schedule(static)
   for (int i = 0; i < nnz_; i++) {
     sm.values[i] = val[i];
     sm.col_idx[i] = col[i];
+  }
+#pragma omp parallel for schedule(static)
+  for (int i = 0; i < rows_; i++) {
+    sm.row_start[i] = 0;
+  }
+  for (int i = 0; i < nnz_; i++) {
     sm.row_start[row[i] + 1]++;
   }
   for (int i = 0; i < rows_; i++) {

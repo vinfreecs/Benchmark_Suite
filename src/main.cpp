@@ -10,15 +10,6 @@
 #include <omp.h>
 #include <string>
 
-template <typename T> T create_vector(typename T::value_type value, int N) {
-  T vec(N);
-#pragma omp parallel for schedule(static)
-  for (int i = 0; i < N; i++) {
-    vec[i] = value;
-  }
-  return vec;
-}
-
 int main(int argc, char *argv[]) {
 
   if (argc != 3) {
@@ -76,7 +67,7 @@ int main(int argc, char *argv[]) {
     VecND rhs = create_vector<VecND>(0.1, N);
     VecND lhs = create_vector<VecND>(0.1, N);
     // modify this to reflect the actual Flops
-    HARNESS(spmv(lhs, mat, rhs), 1, mat.nnz)
+    HARNESS(spmv(lhs, mat, rhs), 2, mat.nnz)
   } else if (input_kernal == "jacobi") {
     csr A;
     read_matrix(&matrix_name[0], A);
