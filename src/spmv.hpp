@@ -129,7 +129,7 @@ void read_matrix(const char *file, csr &sm) {
   int *row = new int[nnz_];
   double *val = new double[nnz_];
 
-  // pramga omp parallel for?
+#pragma omp parallel for schedule(static)
   for (int idx = 0; idx < nnz_; ++idx) {
     col[idx] = cols_unsorted_[perm[idx]];
     val[idx] = values_unsorted_[perm[idx]];
@@ -150,7 +150,8 @@ void read_matrix(const char *file, csr &sm) {
   // FIX this has to be from zero as we are incrementing the values in the loop
   // below and as spm size increases the vec goes into heap from stack
   std::fill(sm.row_start.begin(), sm.row_start.end(), 0);
-  // maybe pragma to spedd and first touch numa
+// maybe pragma to spedd and first touch numa
+#pragma omp parallel for schedule(static)
   for (int i = 0; i < nnz_; i++) {
     sm.values[i] = val[i];
     sm.col_idx[i] = col[i];
@@ -191,6 +192,7 @@ void spmv(VecND &lhs, csr &smat, VecND &rhs) {
     double sum = 0.0;
     int start = smat.row_start[i];
     int end = smat.row_start[i + 1];
+#pragma omp simd
     for (int j = start; j < end; j++) {
       sum += smat.values[j] * rhs[smat.col_idx[j]];
     }

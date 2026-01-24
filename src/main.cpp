@@ -21,7 +21,7 @@ template <typename T> T create_vector(typename T::value_type value, int N) {
 
 int main(int argc, char *argv[]) {
 
-  if (argc < 3) {
+  if (argc != 3) {
     std::cerr << "Usage " << argv[0] << " <kernal_name> \n";
     std::cerr << "Choose one of these kernals \n-> axpby <size>\n-> dot "
                  "<size> \n-> read_sparse <matrix_path>\n-> spmv "
