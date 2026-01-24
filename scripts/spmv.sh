@@ -14,7 +14,7 @@ do
     
     srun --cpu-freq=2200000-2200000:performance \
     --export=ALL,OMP_NUM_THREADS=${t},OMP_PLACES=cores,OMP_PROC_BIND=spread \
-    ./benchmark spmv 1000 500
+    ./benchmark spmv 1000 matrices/matrix_band_small.mtx
 done
 
 echo "---------------------------------------------------------------"

@@ -1,24 +1,29 @@
 #define PRINT_KERNAL(kernal)                                                   \
-  std::cout << "-- BENCHMARKING " << kernal << " -- \n";                       \
-  std::cout << "The number of iterations " << iter                             \
-            << " the size of the array " << N << "\n";
+  std::cout << "-- BENCHMARKING " << kernal << " -- \n";
 
 #define HARNESS(kernal, mult_value, NN)                                        \
-  for (int wit = 0; wit < 0; wit++) {                                          \
+  for (int wit = 0; wit < iter; wit++) {                                       \
     kernal;                                                                    \
   }                                                                            \
   double start, end;                                                           \
-  start = getTimeStamp();                                                      \
-  for (int it = 0; it < iter; it++) {                                          \
-    kernal;                                                                    \
+  double duration = 0;                                                         \
+  while (duration < 0.1) {                                                     \
+    start = getTimeStamp();                                                    \
+    for (int it = 0; it < iter; it++) {                                        \
+      kernal;                                                                  \
+    }                                                                          \
+    end = getTimeStamp();                                                      \
+    duration = end - start;                                                    \
+    iter *= 2;                                                                 \
   }                                                                            \
-  end = getTimeStamp();                                                        \
-  double duration = end - start;                                               \
+  iter /= 2;                                                                   \
   std::cout << "Time taken : " << duration << "\n";                            \
   std::cout << "Performance : "                                                \
             << ((double)((double)iter * (double)NN) * mult_value) /            \
                    (duration * 1e9)                                            \
-            << "GFlops/s \n";
+            << "GFlops/s \n";                                                  \
+  std::cout << "The number of iterations " << iter                             \
+            << " the size of the array " << N << "\n";
 
 #define TIME_SOLVER(kernal, NN, mat)                                           \
   double start, end;                                                           \

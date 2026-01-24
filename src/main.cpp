@@ -21,27 +21,20 @@ template <typename T> T create_vector(typename T::value_type value, int N) {
 
 int main(int argc, char *argv[]) {
 
-  if (argc < 2) {
+  if (argc < 3) {
     std::cerr << "Usage " << argv[0] << " <kernal_name> \n";
-    std::cerr << "Choose one of these kernals \n-> axpby <size> <iter>\n-> dot "
-                 "<size> <iter>\n-> read_sparse <matrix_path>\n-> spmv "
+    std::cerr << "Choose one of these kernals \n-> axpby <size>\n-> dot "
+                 "<size> \n-> read_sparse <matrix_path>\n-> spmv "
                  "<matrix_path>\n-> jacobi "
                  "<matrix_path>\n-> gauss_seidel <matrix_path>\n ";
     return 1;
   }
 
   std::string input_kernal = argv[1];
-  int N = 1000, iter = 1000, warmupIter = 10;
+  int N = 1000, iter = 8, warmupIter = 8;
   std::string matrix_name = "matrices/matrix_band_small.mtx";
-  if (input_kernal == "axpby" || input_kernal == "dot") {
-    std::cout << "before parsing size N : " << N << std::endl;
-
+  if ((input_kernal == "axpby" || input_kernal == "dot")) {
     N = isdigit(*argv[2]) ? std::stoi(argv[2]) : 1000; // size of the aray
-    std::cout << "after parsing size N : " << N << std::endl;
-    int iter =
-        isdigit(*argv[3]) ? std::stod(argv[3]) : 1000; // number of iterations
-    int warmupIter =
-        (int)(iter / 5); // warmup iteration to avoid caching effects
   } else if (input_kernal == "jacobi" || input_kernal == "gauss_seidel" ||
              input_kernal == "read_sparse" || input_kernal == "spmv" ||
              input_kernal == "cg") {
@@ -76,7 +69,7 @@ int main(int argc, char *argv[]) {
     PRINT_SPARSE_DETAILS(mat);
   } else if (input_kernal == "spmv") {
     csr mat;
-    read_matrix("matrices/nv1.mtx", mat);
+    read_matrix(&matrix_name[0], mat);
     // calculate_b_c(mat);
     // PRINT_SPARSE_DETAILS(mat);
     N = mat.rows;
