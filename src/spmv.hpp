@@ -194,7 +194,7 @@ void spmv(VecND &lhs, csr &smat, VecND &rhs) {
     double sum = 0.0;
     int start = smat.row_start[i];
     int end = smat.row_start[i + 1];
-#pragma omp simd
+#pragma omp simd reduction(+ : sum)
     for (int j = start; j < end; j++) {
       sum += smat.values[j] * rhs[smat.col_idx[j]];
     }

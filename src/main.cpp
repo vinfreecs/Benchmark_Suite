@@ -17,7 +17,8 @@ int main(int argc, char *argv[]) {
     std::cerr << "Choose one of these kernals \n-> axpby <size>\n-> dot "
                  "<size> \n-> read_sparse <matrix_path>\n-> spmv "
                  "<matrix_path>\n-> jacobi "
-                 "<matrix_path>\n-> gauss_seidel <matrix_path>\n ";
+                 "<matrix_path>\n-> jacobi_separate <matrix_path>\n-> "
+                 "gauss_seidel <matrix_path>\n ";
     return 1;
   }
 
@@ -28,7 +29,7 @@ int main(int argc, char *argv[]) {
     N = isdigit(*argv[2]) ? std::stoi(argv[2]) : 1000; // size of the aray
   } else if (input_kernal == "jacobi" || input_kernal == "gauss_seidel" ||
              input_kernal == "read_sparse" || input_kernal == "spmv" ||
-             input_kernal == "cg") {
+             input_kernal == "cg" || input_kernal == "jacobi_separate") {
     matrix_name = argv[2];
   }
 
@@ -71,12 +72,23 @@ int main(int argc, char *argv[]) {
   } else if (input_kernal == "jacobi") {
     csr A;
     read_matrix(&matrix_name[0], A);
-    PRINT_SPARSE_DETAILS(A)
+    // PRINT_SPARSE_DETAILS(A)
     N = A.rows;
     VecND b = create_vector<VecND>(2.0, N);
     VecND x_new = create_vector<VecND>(0.0, N);
     VecND x_old = create_vector<VecND>(1.0, N);
     TIME_SOLVER(jacobi(maxIter, A, b, x_new, x_old), maxIter, A)
+  } else if (input_kernal == "jacobi_separate") {
+    csr A;
+    read_matrix(&matrix_name[0], A);
+    // PRINT_SPARSE_DETAILS(A)
+    N = A.rows;
+    VecND D = create_vector<VecND>(1.0, N);
+    VecND b = create_vector<VecND>(2.0, N);
+    VecND x_new = create_vector<VecND>(0.0, N);
+    VecND x_old = create_vector<VecND>(1.0, N);
+    // get_diagonal(A, D, x_old, x_new);
+    TIME_SOLVER(jacobi_separate(maxIter, A, b, x_new, x_old, D), maxIter, A)
   } else if (input_kernal == "gauss_seidel") {
     csr A;
     read_matrix(&matrix_name[0], A);

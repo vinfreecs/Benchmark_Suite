@@ -57,3 +57,20 @@ double get_residual(const csr &A, const VecND &b, const VecND &x) {
 
   return std::sqrt(sum_sq_diff);
 }
+
+void get_diagonal(csr &A, VecND &D) {
+#pragma omp parallel for schedule(static)
+  for (int row_idx = 0; row_idx < A.rows; ++row_idx) {
+    double diag_elem = 1.0;
+    int start_row = A.row_start[row_idx];
+    int stop_row = A.row_start[row_idx + 1];
+
+    for (int nz_idx = start_row; nz_idx < stop_row; ++nz_idx) {
+      if (row_idx == A.col_idx[nz_idx]) {
+        diag_elem = A.values[nz_idx];
+        break;
+      }
+    }
+    D[row_idx] = diag_elem;
+  }
+}

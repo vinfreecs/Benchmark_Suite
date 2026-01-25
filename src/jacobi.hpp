@@ -30,9 +30,51 @@ void jacobi(int &maxIter, csr &A, VecND &b, VecND &x_new, VecND &x_old) {
     jacobi_fused_iteration(A, b, x_new, x_old);
     if (k % 1 == 0) {
       double res = get_residual(A, b, x_new);
-      std::cout << "Iter " << k << ": Residual = " << res << std::endl;
+      // std::cout << "Iter " << k << ": Residual = " << res << std::endl;
       if (res < tolerance) {
+        std::cout << "Iter " << k << ": Residual = " << res << std::endl;
         std::cout << "Solver : Jacobi Converged \n";
+        maxIter = k + 1;
+        return;
+      }
+    }
+    std::swap(x_old, x_new);
+  }
+}
+
+void normalize_x(VecND &x_new, VecND &x_old, VecND &D, VecND &b, int rows) {
+#pragma omp parallel for schedule(static)
+  for (int row_idx = 0; row_idx < rows; ++row_idx) {
+    double scaled_x_old = D[row_idx] * x_old[row_idx];
+
+    double adjusted_x = x_new[row_idx] - scaled_x_old;
+
+    x_new[row_idx] = (b[row_idx] - adjusted_x) / D[row_idx];
+  }
+}
+
+void jacobi_separate_iteration(csr &A, VecND &D, VecND &b, VecND &x_new,
+                               VecND &x_old) {
+
+  // x_new <- A*x_old
+  spmv(x_new, A, x_old);
+
+  // x_new <- D^{-1}(b - (x_new - D))
+  normalize_x(x_new, x_old, D, b, A.rows);
+}
+
+void jacobi_separate(int &maxIter, csr &A, VecND &b, VecND &x_new, VecND &x_old,
+                     VecND &D) {
+  double tolerance = 0.0001;
+  get_diagonal(A, D);
+  for (int k = 0; k < maxIter; k++) {
+    jacobi_separate_iteration(A, D, b, x_new, x_old);
+    if (k % 1 == 0) {
+      double res = get_residual(A, b, x_new);
+      // std::cout << "Iter " << k << ": Residual = " << res << std::endl;
+      if (res < tolerance) {
+        std::cout << "Iter " << k << ": Residual = " << res << std::endl;
+        std::cout << "Solver : Jacobi Separate Converged \n";
         maxIter = k + 1;
         return;
       }
