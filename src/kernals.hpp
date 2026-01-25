@@ -74,3 +74,71 @@ void get_diagonal(csr &A, VecND &D) {
     D[row_idx] = diag_elem;
   }
 }
+
+void elemwise_div_vectors(VecND &result_vec, VecND &vec1, VecND &vec2, int N,
+                          double scale = 1.0) {
+#pragma omp parallel for schedule(static)
+  for (int i = 0; i < N; ++i) {
+    result_vec[i] = vec1[i] / (scale * vec2[i]);
+  }
+}
+
+void sptrsv(csr &L, VecND &x, VecND &D, VecND &b) {
+  double sum;
+  for (int row = 0; row < L.rows; ++row) {
+    sum = 0.0;
+    int row_start = L.row_start[row];
+    int row_stop = L.row_start[row + 1];
+
+    for (int nz_idx = row_start; nz_idx < row_stop; ++nz_idx) {
+      sum += L.values[nz_idx] * x[L.col_idx[nz_idx]];
+    }
+
+    x[row] = (b[row] - sum) / D[row];
+  }
+}
+
+void bsptrsv(csr &U, VecND &x, VecND &D, VecND &b) {
+
+  for (int row = U.rows - 1; row >= 0; --row) {
+    double sum = 0.0;
+    int row_start = U.row_start[row];
+    int row_stop = U.row_start[row + 1];
+
+    for (int nz_idx = row_start; nz_idx < row_stop; ++nz_idx) {
+      sum += U.values[nz_idx] * x[U.col_idx[nz_idx]];
+    }
+
+    x[row] = (b[row] - sum) / D[row];
+  }
+}
+
+void elemwise_mult_vectors(VecND &result_vec, VecND &vec1, VecND &vec2, int N) {
+#pragma omp parallel for schedule(static)
+  for (int i = 0; i < N; ++i) {
+    result_vec[i] = vec1[i] * vec2[i];
+  }
+}
+
+void apply_preconditioner(std::string preconditioner, const int N,
+                          csr &L_strict, csr &U_strict, VecND &A_D,
+                          VecND &output, VecND &input) {
+
+  if (preconditioner == "jacobi") {
+    elemwise_div_vectors(output, input, A_D, N);
+  } else if (preconditioner == "gs") {
+    sptrsv(L_strict, output, A_D, input);
+  } else if (preconditioner == "sgs") {
+#pragma omp parallel for schedule(static)
+    for (int i = 0; i < N; ++i) {
+      output[i] = input[i];
+    }
+    sptrsv(L_strict, output, A_D, output);
+    elemwise_mult_vectors(output, output, A_D, N);
+    bsptrsv(U_strict, output, A_D, output);
+  }
+  // else {
+  //   // TODO: Would be great to think of a way around this
+  //   copy_vector(output, input, N);
+  // }
+}

@@ -2,6 +2,7 @@
 #include "gauss_seidel.hpp"
 #include "jacobi.hpp"
 #include "kernals.hpp"
+#include "pcg.hpp"
 #include "spmv.hpp"
 #include "timing.hpp"
 #include "utils.hpp"
@@ -18,7 +19,7 @@ int main(int argc, char *argv[]) {
                  "<size> \n-> read_sparse <matrix_path>\n-> spmv "
                  "<matrix_path>\n-> jacobi "
                  "<matrix_path>\n-> jacobi_separate <matrix_path>\n-> "
-                 "gauss_seidel <matrix_path>\n ";
+                 "gauss_seidel <matrix_path>\n-> pcg <matrix_path>\n ";
     return 1;
   }
 
@@ -29,7 +30,8 @@ int main(int argc, char *argv[]) {
     N = isdigit(*argv[2]) ? std::stoi(argv[2]) : 1000; // size of the aray
   } else if (input_kernal == "jacobi" || input_kernal == "gauss_seidel" ||
              input_kernal == "read_sparse" || input_kernal == "spmv" ||
-             input_kernal == "cg" || input_kernal == "jacobi_separate") {
+             input_kernal == "cg" || input_kernal == "jacobi_separate" ||
+             input_kernal == "pcg") {
     matrix_name = argv[2];
   }
 
@@ -109,6 +111,10 @@ int main(int argc, char *argv[]) {
     csr A;
     std::cout << matrix_name << std::endl;
     read_matrix(&matrix_name[0], A);
+    N = A.rows;
+    VecND b = create_vector<VecND>(2.0, N);
+    VecND x = create_vector<VecND>(1.0, N);
+    TIME_SOLVER(pcg_solver(maxIter, A, x, b), maxIter, A)
   } else {
     std::cerr << "This kernal is not yet available \n";
   }
