@@ -170,7 +170,7 @@ void pcg_solver(int &maxIter, csr &A, VecND &x_old, VecND &b) {
 
   std::cout << "Entered apply_preconditioner \n";
 
-  apply_preconditioner("jacobi", N, L, U, A_D, z_old, r_old);
+  apply_preconditioner("sgs", N, L, U, A_D, z_old, r_old);
   std::cout << "Exit apply_preconditioner \n";
 
 #pragma omp parallel for schedule(static)
