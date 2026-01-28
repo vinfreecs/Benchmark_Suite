@@ -14,3 +14,4 @@ matrices/
 *.mtx
 *.gp
 *.o
+setup.sh
