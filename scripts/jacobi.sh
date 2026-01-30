@@ -25,6 +25,10 @@ do
         srun --cpu-freq=2200000-2200000:performance \
              --export=ALL,OMP_NUM_THREADS=${t},OMP_PLACES=cores,OMP_PROC_BIND=close \
              ./benchmark jacobi_separate matrices/${matrix}.mtx >> "${FILENAME}"
+        echo "Jacobi Orphaned"
+        srun --cpu-freq=2200000-2200000:performance \
+             --export=ALL,OMP_NUM_THREADS=${t},OMP_PLACES=cores,OMP_PROC_BIND=close \
+             ./benchmark jacobi_orphaned matrices/${matrix}.mtx >> "${FILENAME}"
     
 done
 

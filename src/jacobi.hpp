@@ -82,3 +82,60 @@ void jacobi_separate(int &maxIter, csr &A, VecND &b, VecND &x_new, VecND &x_old,
     std::swap(x_old, x_new);
   }
 }
+
+void spmv_orphaned_call(VecND &lhs, csr &smat, VecND &rhs) {
+#pragma omp for schedule(static)
+  for (int i = 0; i < smat.rows; i++) {
+    double sum = 0.0;
+    int start = smat.row_start[i];
+    int end = smat.row_start[i + 1];
+#pragma omp simd reduction(+ : sum)
+    for (int j = start; j < end; j++) {
+      sum += smat.values[j] * rhs[smat.col_idx[j]];
+    }
+    lhs[i] = sum;
+  }
+}
+
+void normalize_x_orphaned_call(VecND &x_new, VecND &x_old, VecND &D, VecND &b,
+                               int rows) {
+#pragma omp for schedule(static)
+  for (int row_idx = 0; row_idx < rows; ++row_idx) {
+    double scaled_x_old = D[row_idx] * x_old[row_idx];
+
+    double adjusted_x = x_new[row_idx] - scaled_x_old;
+
+    x_new[row_idx] = (b[row_idx] - adjusted_x) / D[row_idx];
+  }
+}
+
+void jacobi_orphaned_iteration(csr &A, VecND &D, VecND &b, VecND &x_new,
+                               VecND &x_old) {
+
+#pragma omp parallel
+  {
+    spmv_orphaned_call(x_new, A, x_old);
+    normalize_x_orphaned_call(x_new, x_old, D, b, A.rows);
+  }
+}
+
+void jacobi_orphaned(int &maxIter, csr &A, VecND &b, VecND &x_new, VecND &x_old,
+                     VecND &D) {
+
+  double tolerance = 0.0001;
+  get_diagonal(A, D);
+  for (int k = 0; k < maxIter; k++) {
+    jacobi_orphaned_iteration(A, D, b, x_new, x_old);
+    if (k % 1 == 0) {
+      double res = get_residual(A, b, x_new);
+      // std::cout << "Iter " << k << ": Residual = " << res << std::endl;
+      if (res < tolerance) {
+        std::cout << "Iter " << k << ": Residual = " << res << std::endl;
+        std::cout << "Solver : Jacobi Orphaned Converged \n";
+        maxIter = k + 1;
+        return;
+      }
+    }
+    std::swap(x_old, x_new);
+  }
+}

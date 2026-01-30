@@ -1,0 +1,87 @@
+Starting Benchmark...
+Jacobi BENCHMARK
+Benchmarking across 1 NUMA 
+---------------------------------------------------------------
+Matrix : matrix_band_small
+Running with threads: 18
+Iter 28: Residual = 7.48791e-05
+Solver : Jacobi Converged 
+Time taken : 0.000284923
+Performance : 101782iter/s 
+Bandwidth : 0.405092
+Performance in Flops/s : 
+Iter 28: Residual = 7.48791e-05
+Solver : Jacobi Separate Converged 
+Time taken : 0.000340194
+Performance : 85245.5iter/s 
+Bandwidth : 0.339277
+Performance in Flops/s : 
+Iter 28: Residual = 7.48791e-05
+Solver : Jacobi Orphaned Converged 
+Time taken : 0.000640492
+Performance : 45277.7iter/s 
+Bandwidth : 0.180205
+Performance in Flops/s : 
+---------------------------------------------------------------
+Matrix : HPCG-25-25-25
+Running with threads: 18
+Iter 938: Residual = 9.95846e-05
+Solver : Jacobi Converged 
+Time taken : 0.156116
+Performance : 6014.77iter/s 
+Bandwidth : 28.4541
+Performance in Flops/s : 
+Iter 938: Residual = 9.95846e-05
+Solver : Jacobi Separate Converged 
+Time taken : 0.154652
+Performance : 6071.71iter/s 
+Bandwidth : 28.7235
+Performance in Flops/s : 
+Iter 938: Residual = 9.95846e-05
+Solver : Jacobi Orphaned Converged 
+Time taken : 0.162494
+Performance : 5778.67iter/s 
+Bandwidth : 27.3372
+Performance in Flops/s : 
+---------------------------------------------------------------
+Matrix : HPCG-72-72-72
+Running with threads: 18
+Iter 385: Residual = 9.71719e-05
+Solver : Jacobi Converged 
+Time taken : 1.57365
+Performance : 245.29iter/s 
+Bandwidth : 29.2133
+Performance in Flops/s : 
+Iter 385: Residual = 9.71719e-05
+Solver : Jacobi Separate Converged 
+Time taken : 1.52859
+Performance : 252.521iter/s 
+Bandwidth : 30.0745
+Performance in Flops/s : 
+Iter 385: Residual = 9.71719e-05
+Solver : Jacobi Orphaned Converged 
+Time taken : 1.59413
+Performance : 242.139iter/s 
+Bandwidth : 28.838
+Performance in Flops/s : 
+---------------------------------------------------------------
+Matrix : HPCG-128-128-128
+Running with threads: 18
+Iter 422: Residual = 9.8236e-05
+Solver : Jacobi Converged 
+Time taken : 9.61795
+Performance : 43.9803iter/s 
+Bandwidth : 29.788
+Performance in Flops/s : 
+Iter 422: Residual = 9.8236e-05
+Solver : Jacobi Separate Converged 
+Time taken : 9.67169
+Performance : 43.7359iter/s 
+Bandwidth : 29.6225
+Performance in Flops/s : 
+Iter 422: Residual = 9.8236e-05
+Solver : Jacobi Orphaned Converged 
+Time taken : 10.05
+Performance : 42.0895iter/s 
+Bandwidth : 28.5074
+Performance in Flops/s : 
